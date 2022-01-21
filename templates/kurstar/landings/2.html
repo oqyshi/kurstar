@@ -1,0 +1,537 @@
+{% extends "kurstar/landings/base.html" %}
+{% load static %}
+{% block content %}
+
+<section class="start">
+  <div class="container">
+    <div class="offer">
+      <div class="offer-left">
+        <h1 class="offer-left_h1">
+          Сапалы видеоларды қол
+          <br>
+          жетімді смартфондарга
+          <br>
+          түсіріп үйреніңіздер!
+        </h1>
+        <p class="offer-left_p">Арнайы құрал - жабдықтарсыз айына 200 мың теңгеден аса табыс таба біл</p>
+        <!--        <form action="{% url 'kurstar:course_detail' 2 %}" class="inline">-->
+        <!--          <button class="offer-left_button">-->
+        <!--            <p>Курсты өту</p>-->
+        <!--          </button>-->
+        <!--        </form>-->
+        <button class="offer-left_button" onclick='modal("myModal")'>
+          <p>КУРСТЫ ӨТУ</p>
+        </button>
+
+      </div>
+      <div class="offer-right">
+        <img class="offer-right_img1" src="{% static 'img/landings/kz__discount.svg' %}" alt="">
+
+        <img class="offer-right_img" src="{% static 'img/mobilografia/headerimg.png' %}" alt="">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="for">
+  <div class="container container-menos">
+    <h1 class="title">Мобилография дегеніміз не?</h1>
+    <div class="description">
+      <p>
+        Қазіргі заманда әдемі суреттер мен видеоларды түсіре білу - <b>үлкен сұранысқа ие қасиеттердің бірі.</b> Кез -
+        келген компания фотошоп пен видео монтажды жақсы меңгерген адамды өзіне алғысы келеді, алайда
+        керекті құрал - жабдықтар қымбат болғандықтан кейін қалаған адам осы мамандықты жеткілікті меңгере
+        алмайды. Ал осы <b>мобилография курсы айтылып өткен мәселенің шешімі</b> болып табылады! Осы курсты
+        өткеннен кейін сіз <b>сапалы да, креативті видеолар мен фотоларды өзіңіздің кішігірім ұялы
+        телефоныңызда жасай алатын боласыздар!</b>
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="for">
+  <div class="container container-menos">
+    <div class="description">
+      <img src="{% static 'img/mobilografia/salaries.svg' %}" alt="" width="100%" height="auto">
+    </div>
+  </div>
+</section>
+
+<section class="record">
+  <div class="container container-menos">
+    <h2 class="title">Курсқа жазылыңыздар</h2>
+
+    <form class="record__content" method="POST" action="{% url 'kurstar:callme' %}">
+      {% csrf_token %}
+      <div class="record__forms">
+
+        <input placeholder="Аты-жөніңіз" class="record__input input" type="text" name="name" required>
+        <input placeholder="Телефон" class="record__input input" type="text" name="number" required>
+        <input placeholder="E-mail" class="record__input input" type="email" name="email" required>
+        <input style='visibility: hidden;' type="textarea" name="comment" value="С лэндинга Мобилография 1">
+        <div class="record__checkbox checkbox"><input type="checkbox" onclick="check()" required>
+          <p>Мен өзімнің жеке ақпараттарымды өңдеуге рұқсат беремін</p>
+        </div>
+      </div>
+      <button class="btn" type="submit">КУРСҚА ЖАЗЫЛУ</button>
+    </form>
+
+  </div>
+</section>
+
+<section class="for">
+  <div class="container container-menos">
+    <h2 class="title">Бұл курс келесі адамдарға бағытталған</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="{% static 'img/mobilografia/for-1.svg' %}" alt="">
+        <p>
+          Сапалы фотолар мен
+          <br>
+          видеоларды түсіріп
+          <br>
+          үйренгісі келетіндерге
+        </p>
+        <div>
+          Фото және видеоларыңызды қалай қызықты әрі
+          <br>
+          ерекше форматқа келтіру керек екендігін білесіздер
+        </div>
+      </div>
+      <div class="card">
+        <img src="{% static 'img/mobilografia/for-2.svg' %}" alt="">
+        <p>
+          Профессионалды камераға
+          <br>
+          ақшалар жетпейтіндерге
+        </p>
+        <div>
+          Барлық процесс смартфонда немесе планшетте жүргізіледі
+        </div>
+      </div>
+      <div class="card">
+        <img src="{% static 'img/mobilografia/for-3.svg' %}" alt="">
+        <p>
+          Инстаграмда 1 тиын да кетірмей әйгілі болу
+        </p>
+        <div>
+          Курсты өткеннен кейін сіз Инстаграмға және басқа да ғаламтордағы әлеуметтерге сапалы контент жүктей аласыздар
+        </div>
+      </div>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <img src="{% static 'img/mobilografia/for-4.svg' %}" alt="">
+        <p>Өз жұмысыңыз көңіліңізден шықпаса</p>
+        <div>
+          Іш пыстырар жұмысыңыздан бас тартып, өзіңізді өзге маман иесі ретінде сынап көріңіз. Мобилография адамның
+          өнерлік қасиеттерін жақсы ашады!
+        </div>
+      </div>
+      <div class="card">
+        <img src="{% static 'img/mobilografia/for-5.svg' %}" alt="">
+        <p>
+          Табысыңыз жасыңызға қарамасын!
+        </p>
+        <div>
+          Мобилографияны кез - келген жастағы адам меңгере алады. Тіпті оқушы болсаңыз да мүмкін
+        </div>
+      </div>
+      <div class="card">
+        <img src="{% static 'img/mobilografia/for-6.svg' %}" alt="">
+        <p>
+          Айына 200 000 теңгеден табыс тапқысы келедіндерге
+        </p>
+        <div>
+          Курсты өткеннен кейін сіз комерсиялық проекттерді шығару арқылы біліміңізді ұштай аласыз
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="profit">
+  <div class="container container-menos">
+    <h2 class="title">Мобилография - "оңай" сөзіне синоним</h2>
+    <div class="profit__cards">
+      <div class="container">
+        <div class="profit__card">
+          <div class="course1-img"><img src="{% static 'img/landings/aw.svg' %}" alt=""></div>
+          <p>
+            Ауыр құрал - жабдықтарды
+            <br>
+            тасудың қажеті жоқ
+          </p>
+        </div>
+        <small>
+          Камера, штатив және т.б. керегі
+          <br>
+          болмайды!
+        </small>
+      </div>
+      <div class="container">
+        <div class="profit__card">
+          <div class="course1-img"><img src="{% static 'img/landings/aw.svg' %}" alt=""></div>
+          <p>
+            Арнайы білім иесі болудың қажеті жоқ
+          </p>
+        </div>
+        <small>
+          Мобилографияны 1 айда меңгеріп
+          <br>
+          алса болады, арықарай жаттығу
+          <br>
+          арқылы білімді ұштаса болады
+        </small>
+      </div>
+      <div class="container">
+        <div class="profit__card">
+          <div class="course1-img"><img src="{% static 'img/landings/aw.svg' %}" alt=""></div>
+          <p>
+            Бүкіл процесс
+            <br>
+            телефонда жүргізіледі
+          </p>
+
+        </div>
+        <small>
+          Түсірілім, өңдеу, материальдарды
+          <br>
+          жіберу - барлығы да ұялы
+          <br>
+          телефонда жүргізілетін болады
+        </small>
+      </div>
+    </div>
+
+  </div>
+  </div>
+</section>
+
+<section class="record">
+  <div class="container container-menos">
+    <h2 class="title">Курсқа жазылыңыздар</h2>
+
+    <form class="record__content" method="POST" action="{% url 'kurstar:callme' %}">
+      {% csrf_token %}
+      <div class="record__forms">
+
+        <input placeholder="Аты-жөніңіз" class="record__input input" type="text" name="name" required>
+        <input placeholder="Телефон" class="record__input input" type="text" name="number" required>
+        <input placeholder="E-mail" class="record__input input" type="email" name="email" required>
+        <input style='visibility: hidden;' type="textarea" name="comment" value="С лэндинга Мобилография 2">
+        <div class="record__checkbox checkbox"><input type="checkbox" onclick="check()" required>
+          <p>Мен өзімнің жеке ақпараттарымды өңдеуге рұқсат беремін</p>
+        </div>
+      </div>
+      <button class="btn" type="submit">КУРСҚА ЖАЗЫЛУ</button>
+    </form>
+
+  </div>
+</section>
+
+<section class="course2">
+  <div class="container container-menos">
+    <h2 class="title">Сіз курста не өтесіз?</h2>
+    <div class="curriculum-list">
+      <div class="d-flex curriculum-item align-items-center">
+        <div class="curriculum-item-number d-flex justify-content-center align-items-center">
+          <h2>1</h2>
+        </div>
+        <p> Интро. Идеялардың маңыздылығы. Фотоның қандай стильдері бар.</p>
+      </div>
+
+      <div class="d-flex curriculum-item align-items-center">
+        <div class="curriculum-item-number d-flex justify-content-center align-items-center">
+          <h2>2</h2>
+        </div>
+        <p>Фото түсіргенде нені ескеру керек?</p>
+      </div>
+
+      <div class="d-flex curriculum-item align-items-center">
+        <div class="curriculum-item-number d-flex justify-content-center align-items-center">
+          <h2>3</h2>
+        </div>
+        <p>Алтын уақыт деген не?</p>
+      </div>
+
+      <div class="d-flex curriculum-item align-items-center">
+        <div class="curriculum-item-number d-flex justify-content-center align-items-center">
+          <h2>4</h2>
+        </div>
+        <p>Фотоны өңдеу</p>
+      </div>
+
+      <div class="d-flex curriculum-item align-items-center">
+        <div class="curriculum-item-number d-flex justify-content-center align-items-center">
+          <h2>5</h2>
+        </div>
+        <p>Пресеттер, қатемен жұмыс.</p>
+      </div>
+      <div class="d-flex curriculum-item align-items-center">
+        <div class="curriculum-item-number d-flex justify-content-center align-items-center">
+          <h2>6</h2>
+        </div>
+        <p>Креативті фотолар</p>
+      </div>
+      <div class="d-flex curriculum-item align-items-center">
+        <div class="curriculum-item-number d-flex justify-content-center align-items-center">
+          <h2>7</h2>
+        </div>
+        <p>Әдемі видео жасап үйрен!</p>
+      </div>
+      <div class="d-flex curriculum-item align-items-center">
+        <div class="curriculum-item-number d-flex justify-content-center align-items-center">
+          <h2>8</h2>
+        </div>
+        <p>Өз қолыңмен жасалынатын переходтар</p>
+      </div>
+      <div class="d-flex curriculum-item align-items-center">
+        <div class="curriculum-item-number d-flex justify-content-center align-items-center">
+          <h2>9</h2>
+        </div>
+        <p>Хромакей қолданып үйрен!</p>
+      </div>
+      <div class="d-flex curriculum-item align-items-center">
+        <div class="curriculum-item-number d-flex justify-content-center align-items-center">
+          <h2>10</h2>
+        </div>
+        <p>Креативті переход</p>
+
+      </div>
+      <div class="d-flex curriculum-item align-items-center">
+        <div class="curriculum-item-number d-flex justify-content-center align-items-center">
+          <h2>11</h2>
+        </div>
+        <p>Видеоны қызық жаса!</p>
+
+      </div>
+      <div class="d-flex curriculum-item align-items-center">
+        <div class="curriculum-item-number d-flex justify-content-center align-items-center">
+          <h2>12</h2>
+        </div>
+        <p>Креативті видео</p>
+
+      </div>
+      <div class="d-flex curriculum-item align-items-center">
+        <div class="curriculum-item-number d-flex justify-content-center align-items-center">
+          <h2>13</h2>
+        </div>
+        <p>Қатемен жұмыс</p>
+
+      </div>
+    </div>
+
+    <button class="course3__btn btn" onclick='modal("myModal")'><p>КУРСҚА ЖАЗЫЛУ</p></button>
+
+  </div>
+</section>
+
+<section class="course2">
+  <div class="container container-menos">
+    <h2 class="title">Біз сізге не береміз?</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="{% static 'img/mobilografia/for-7.svg' %}" alt="">
+        <p>30% теория және 70% практика</p>
+      </div>
+      <div class="card">
+        <img src="{% static 'img/mobilografia/for-8.svg' %}" alt="">
+        <p>Үй жұмысын талдау</p>
+      </div>
+      <div class="card">
+        <img src="{% static 'img/mobilografia/for-9.svg' %}" alt="">
+        <p>Жеке куратор</p>
+      </div>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <img src="{% static 'img/mobilografia/for-10.svg' %}" alt="">
+        <p>Үй жұмысы</p>
+      </div>
+      <div class="card">
+        <img src="{% static 'img/mobilografia/for-11.svg' %}" alt="">
+        <p>Шынайы тапсырыстарды талдау</p>
+      </div>
+      <div class="card">
+        <img src="{% static 'img/mobilografia/for-12.svg' %}" alt="">
+        <p>Дипломды жұмысыңызды бастайсыз </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="course3 d-flex justify-content-center">
+  <div class="container">
+    <h2 class="title">Сабақтар қалай өтетін болады:</h2>
+    <div class="course3__cards cards">
+      <div class="course3__card card">
+        <div class="course3-img"><img src="{% static 'img/ieltskz/one.svg' %}" alt=""></div>
+        <p>Видео сабақтарды қарап өтесіздер</p>
+      </div>
+      <div class="course3__card card">
+        <div class="course3-img"><img src="{% static 'img/ieltskz/two.svg' %}" alt=""></div>
+        <p>Үй жұмысын орындайыздар</p>
+      </div>
+      <div class="course3__card card">
+        <div class="course3-img"><img src="{% static 'img/ieltskz/three.svg' %}" alt=""></div>
+        <p>Куратормен жұмыс істейсіздер</p>
+      </div>
+      <div class="course3__card card">
+        <div class="course3-img"><img src="{% static 'img/ieltskz/four.svg' %}" alt=""></div>
+        <p>Дипломдық жумысты жасайсыз</p>
+      </div>
+    </div>
+    <button class="course3__btn btn" onclick='modal("myModal")'><p>КУРСҚА ЖАЗЫЛУ</p></button>
+  </div>
+</section>
+
+<section class="record">
+  <div class="container container-menos">
+    <h2 class="title">Курсқа жазылыңыздар</h2>
+
+    <form class="record__content" method="POST" action="{% url 'kurstar:callme' %}">
+      {% csrf_token %}
+      <div class="record__forms">
+
+        <input placeholder="Аты-жөніңіз" class="record__input input" type="text" name="name" required>
+        <input placeholder="Телефон" class="record__input input" type="text" name="number" required>
+        <input placeholder="E-mail" class="record__input input" type="email" name="email" required>
+        <input style='visibility: hidden;' type="textarea" name="comment" value="С лэндинга Мобилография 3">
+        <div class="record__checkbox checkbox"><input type="checkbox" onclick="check()" required>
+          <p>Мен өзімнің жеке ақпараттарымды өңдеуге рұқсат беремін</p>
+        </div>
+      </div>
+      <button class="btn" type="submit">КУРСҚА ЖАЗЫЛУ</button>
+    </form>
+
+  </div>
+</section>
+
+<section id="teachers">
+  <div class="container">
+    <div class="teacher red">
+      <div class="teacher__description">
+        <h2>Нуралим</h2>
+        <h3>Мобилография курсын құраушы</h3>
+        <p> Өмірімде жақсы өзгерістер бола бастады. Өз бизнесімнің алға дамуына жол аштым</p>
+        <ul>
+          <li>100-ден астам(100+)коммерциялық видео проект бітірдім</li>
+          <li>Shonbay University бітірдім</li>
+          <li>Мобилография курсын бітірдім</li>
+        </ul>
+        <button class="teacher__more btn">КУРСҚА ЖАЗЫЛУ</button>
+      </div>
+      <div class="teachers__photo">
+        <img src="{% static 'img/mobilografia/nuralim_pic.png' %}" alt="3">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="course4">
+  <div class="container container-menos">
+    <div class="course4__content">
+      <h2 class="title">Кurstar дипломы </h2>
+      <div class="course4__card">
+        <img src="{% static 'img/landings/aw.svg' %}" alt="">
+        <p>
+          Сіз курсыңызды аяғына дейін
+          <br>
+          бітіргенін дәлелдейді
+        </p>
+      </div>
+      <div class="course4__card">
+        <img src="{% static 'img/landings/aw.svg' %}" alt="">
+        <p>
+          Өз мамандығыңыздың шебері
+          <br>
+          екендігіңізді дәлелдейді
+        </p>
+      </div>
+      <div class="course4__card">
+        <img src="{% static 'img/landings/aw.svg' %}" alt="">
+        <p>
+          Жұмысқа тұруға және
+          <br>
+          стажировкаға көмектеседі
+        </p>
+      </div>
+    </div>
+    <img class="course4__image" src="{% static 'img/mobilografia/certificate.svg' %}" alt="">
+  </div>
+</section>
+
+<section class="course5">
+  <div class="container">
+    <h2 class="title">Курстың бағасы</h2>
+    <div class="course5__content">
+      <div class="course5-content_left_rectangle d-flex flex-column justify-content-center align-items-center">
+        <div><h2>5 000 тг</h2></div>
+        <div><h3>40 000 тг</h3></div>
+        <h4>*3 күннің ішінде</h4>
+      </div>
+      <div class="course5__forms">
+        <h2>Курсқа жазыл</h2>
+        <form action="{% url 'kurstar:callme' %}" method="POST"
+              class="d-flex flex-column justify-content-center align-items-center">
+          {% csrf_token %}
+          <input placeholder="Аты-жөніңіз" class="course5__input input" type="text" name="name" required>
+          <input placeholder="Телефон" class="course5__input input" type="text" name="number" required>
+          <input placeholder="E-mail" class="course5__input input" type="email" name="email" required>
+          <input style='visibility: hidden;' type="textarea" name="comment" value="С лэндинга Мобилография 4">
+          <div class="course5__checkbox checkbox"><input type="checkbox" onclick="check()" required>
+            <p>Мен өзімнің жеке ақпараттарымды өңдеуге рұқсат беремін</p></div>
+          <button class="btn" type="submit"><p>КУРСҚА ЖАЗЫЛУ</p></button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="FAQ">
+  <div class="container container-menos">
+    <div class="title">
+      Жиі қойылатын сұрақтар:
+    </div>
+
+    <div class="tabs">
+      <div class="tab">
+        <input id="tab-one" type="checkbox" name="tabs">
+        <label for="tab-one">Каспи Голд арқылы төлей аламын ба?</label>
+        <div class="tab-content">
+          <p>...</p>
+        </div>
+      </div>
+      <div class="tab">
+        <input id="tab-two" type="checkbox" name="tabs">
+        <label for="tab-two">Курсты қашан бастасам болады? </label>
+        <div class="tab-content">
+          <p>...</p>
+        </div>
+      </div>
+      <div class="tab">
+        <input id="tab-three" type="checkbox" name="tabs">
+        <label for="tab-three">Кураторлар әрдайым сұрақтарғажауап береді ма?</label>
+        <div class="tab-content">
+          <p>...</p>
+        </div>
+      </div>
+      <div class="tab">
+        <input id="tab-four" type="checkbox" name="tabs">
+        <label for="tab-four">Курстың өту мерзімі қандай?</label>
+        <div class="tab-content">
+          <p>...</p>
+        </div>
+      </div>
+      <div class="tab">
+        <input id="tab-five" type="checkbox" name="tabs">
+        <label for="tab-five">У меня получится если я никогда не занимался веб-дизайном?</label>
+        <div class="tab-content">
+          <p>...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

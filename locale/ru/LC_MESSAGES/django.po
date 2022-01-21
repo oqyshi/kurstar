@@ -1,0 +1,588 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-10-18 16:58+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: templates/account/account_inactive.html:5
+#: templates/account/account_inactive.html:8
+msgid "Account Inactive"
+msgstr "Аккаунт не активен"
+
+#: templates/account/account_inactive.html:10
+msgid "This account is inactive."
+msgstr "Этот аккаунт не активен"
+
+#: templates/account/email.html:5 templates/account/email.html:8
+msgid "E-mail Адрестар"
+msgstr "E-mail Адреса"
+
+#: templates/account/email.html:10
+msgid "Берілген e-mail адрестар сіздің аккаунтына байланысқан:"
+msgstr "Данные e-mail адреса подключены к вашему аккаунту:"
+
+#: templates/account/email.html:24
+msgid "Расталған"
+msgstr "Подтвержден"
+
+#: templates/account/email.html:26
+msgid "Расталмаған"
+msgstr "Не подтвержден"
+
+#: templates/account/email.html:28
+msgid "Негізгі"
+msgstr "Основной"
+
+#: templates/account/email.html:34
+msgid "Негізгі жазасу"
+msgstr "Основная запись"
+
+#: templates/account/email.html:35
+msgid "Растауды жаңадан жіберу"
+msgstr "Повторно отправить подтверждение"
+
+#: templates/account/email.html:36
+msgid "Өшіру"
+msgstr "Удалить"
+
+#: templates/account/email.html:43
+msgid "Ескерту"
+msgstr "Внимание"
+
+#: templates/account/email.html:49
+msgid "E-mail қосыныз"
+msgstr "Добавьте E-mail"
+
+#: templates/account/email.html:54
+msgid "E-mail қосу"
+msgstr "Добавить E-mail"
+
+#: templates/account/email.html:63
+msgid "Сіз шынымен таңдалған e-mail-ды жойғыңыз келе ме?"
+msgstr "Вы уверены, что хотите удалить выбранный e-mail"
+
+#: templates/account/email_confirm.html:6
+msgid "E-mail-ды растау "
+msgstr "Подтвердить E-mail"
+
+#: templates/account/email_confirm.html:10
+msgid "E-mail-ды растаңыз"
+msgstr "Подтвердите E-mail"
+
+#: templates/account/email_confirm.html:17
+#, python-format
+msgid ""
+"<a href=\"mailto:%(email)s\">%(email)s</a> %(user_display)s үшін электрондық "
+"пошта мекенжайы екенін растаңыз."
+msgstr ""
+
+#: templates/account/email_confirm.html:21
+msgid "Растау"
+msgstr "Подтвердить"
+
+#: templates/account/email_confirm.html:28
+#, python-format
+msgid ""
+"Электрондық пошта арқылы растау үшін Бұл сілтеме мерзімі өткен немесе "
+"жарамсыз. <a href=\"%(email_url)s\">E-mail арқылы растау үшін жаңа сұрау "
+"жіберу</a>."
+msgstr ""
+
+#: templates/account/login.html:7 templates/account/login.html:77
+#: templates/account/signup.html:63 templates/base.html:110
+#: templates/kurstar/base.html:105
+msgid "Кіру"
+msgstr "Вход"
+
+#: templates/account/login.html:14
+msgid "<strong style=\"color:#FD5C63\">KURSTAR</strong>-ға қосылыңыз!"
+msgstr "Подключитесь к <strong style=\"color:#FD5C63\">KURSTAR</strong>!"
+
+#: templates/account/login.html:21
+#, python-format
+msgid ""
+"Please sign in with one\n"
+"      of your existing third party accounts. Or, <a href=\"%(signup_url)s"
+"\">sign up</a>\n"
+"      for a %(site_name)s account and sign in below:"
+msgstr ""
+
+#: templates/account/login.html:31
+msgid "немесе"
+msgstr "или"
+
+#: templates/account/login.html:63
+msgid "Жасырын сөз"
+msgstr "Пароль"
+
+#: templates/account/login.html:67
+msgid "Мені жаттап ал"
+msgstr "Запомнить меня"
+
+#: templates/account/login.html:82
+msgid "Жасырын сөзды ұмытып қалдыңыз ба?"
+msgstr "Забыли пароль?"
+
+#: templates/account/login.html:86 templates/account/signup.html:5
+#: templates/account/signup.html:59 templates/base.html:109
+#: templates/kurstar/base.html:104
+msgid "Тіркелу"
+msgstr "Регистрация"
+
+#: templates/account/logout.html:5 templates/account/logout.html:9
+#: templates/account/logout.html:18 templates/base.html:104
+#: templates/kurstar/base.html:99
+msgid "Шығу"
+msgstr "Выйти"
+
+#: templates/account/logout.html:11
+msgid "Сіз шыққыңыз келетініне сенімдісіз бе?"
+msgstr "Вы уверены, что хотите выйти?"
+
+#: templates/account/password_change.html:5
+#: templates/account/password_change.html:9
+#: templates/account/password_change.html:14
+#: templates/account/password_reset.html:6
+#: templates/account/password_reset.html:10
+#: templates/account/password_reset_done.html:6
+#: templates/account/password_reset_done.html:10
+#: templates/account/password_reset_from_key.html:4
+#: templates/account/password_reset_from_key.html:8
+#: templates/account/password_reset_from_key.html:19
+#: templates/account/password_reset_from_key_done.html:4
+#: templates/account/password_reset_from_key_done.html:8
+msgid "Жасырын сөзді қалпына келтіру"
+msgstr "Восстановить пароль"
+
+#: templates/account/password_reset.html:15
+msgid ""
+"Құпия сөзіңізді ұмыттыңыз ба? Төмендегі электрондық пошта мекенжайын "
+"енгізіңіз және біз сізге оны қалпына келтіруге мүмкіндік беретін электрондық "
+"пошта жібереміз."
+msgstr ""
+
+#: templates/account/password_reset.html:21
+msgid "Менің жасырын сөзімді қалпына келтіру"
+msgstr "Восстановить мой пароль"
+
+#: templates/account/password_reset.html:24
+msgid ""
+"Егер сіз қалпына келтіруге қандай да бір проблемалар болсы, бізбен "
+"хабарласыңыз."
+msgstr ""
+"Если у вас возникли проблеммы с восстановление пароля, свяжитесь с нами"
+
+#: templates/account/password_reset_done.html:16
+msgid ""
+"Біз сізге электрондық хат жібердік. Егер сіз оны бірнеше минут ішінде "
+"алмасаңыз, бізге\n"
+"    хабарласыңыз."
+msgstr ""
+
+#: templates/account/password_reset_from_key.html:8
+msgid "Bad Token"
+msgstr ""
+
+#: templates/account/password_reset_from_key.html:12
+#, python-format
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used. Please request a <a\n"
+"          href=\"%(passwd_reset_url)s\">new password reset</a>."
+msgstr ""
+
+#: templates/account/password_reset_from_key.html:22
+#: templates/account/password_reset_from_key_done.html:9
+msgid "Енді сіздің құпия сөзіңіз өзгертілді."
+msgstr "Ваш пароль успешно изменен"
+
+#: templates/account/password_set.html:5 templates/account/password_set.html:9
+#: templates/account/password_set.html:14
+msgid "Құпия сөзді орнату"
+msgstr "Установить пароль"
+
+#: templates/account/signup.html:12
+msgid "Оқуды қазір  бастаңыз"
+msgstr "Начните обучение сейчас"
+
+#: templates/account/signup.html:43
+msgid "Жаңа жасырын сөз"
+msgstr "Новый пароль"
+
+#: templates/account/signup.html:48
+msgid "Жасырын сөзді растау"
+msgstr "Подтвердите пароль"
+
+#: templates/account/signup_closed.html:5
+#: templates/account/signup_closed.html:9
+msgid "Sign Up Closed"
+msgstr ""
+
+#: templates/account/signup_closed.html:11
+msgid "We are sorry, but the sign up is currently closed."
+msgstr ""
+
+#: templates/account/snippets/already_logged_in.html:5
+msgid "Note"
+msgstr ""
+
+#: templates/account/snippets/already_logged_in.html:5
+#, python-format
+msgid "you are already logged in as %(user_display)s."
+msgstr ""
+
+#: templates/account/verification_sent.html:5
+#: templates/account/verification_sent.html:9
+#: templates/account/verified_email_required.html:5
+#: templates/account/verified_email_required.html:9
+msgid "Сіздің E-mail-ды растаңыз"
+msgstr "Подтвердите ваш E-mail"
+
+#: templates/account/verification_sent.html:11
+msgid ""
+"Біз сізге растау үшін электрондық хат жібердік. Тіркеу процесін аяқтау үшін "
+"берілген сілтемеге өтіңіз. Егер сіз оны бірнеше минут ішінде алмасаңыз, "
+"бізге хабарласыңыз."
+msgstr ""
+
+#: templates/account/verified_email_required.html:13
+msgid ""
+"Сайттың бұл бөлігі сізден өзіңіз үшін берген адам екеніңізді растауды талап "
+"етеді. Ол үшін біз\n"
+"    сіздің электрондық поштаңызға меншік құқығын растауды талап етеміз."
+msgstr ""
+
+#: templates/account/verified_email_required.html:16
+msgid ""
+"Біз сізге растау үшін электрондық хат жібердік. Осы Электрондық поштаның "
+"ішіндегі сілтемені\n"
+"    басыңыз. Егер сіз оны бірнеше минут ішінде алмасаңыз, бізге хабарласыңыз."
+msgstr ""
+
+#: templates/account/verified_email_required.html:19
+#, python-format
+msgid ""
+"<strong>Ескерту:</strong> электрондық пошта мекенжайын <a href="
+"\"%(email_url)s\"> әлі де өзгерте\n"
+"    аласыз</a>."
+msgstr ""
+
+#: templates/base.html:11 templates/kurstar/base.html:11
+msgid ""
+"Сұранысқа ие мамандықтар курстарының Онлайн платформасы біз СММ, Бизнес, "
+"Маркетинг, бағдарламалау, Дизайн, ағылшын тілі салаларындағы сұранысқа ие "
+"интернет-мамандықтарға оқытамыз. Бөлім бол Kurstar.kz. бүгін ақша табуды "
+"бастаңыз !!!"
+msgstr ""
+"Онлайн платформа курсов востребованных профессии Мы обучаем востребованным "
+"интернет-профессиям в сферах СММ, Бизнес, Маркетинг, Программирование, "
+"Дизайн Английский язык Инвестируй в себя. Стань частью Kurstar.kz. Начни "
+"зарабатывать уже СЕГОДНЯ !!!"
+
+#: templates/base.html:12 templates/kurstar/base.html:12
+msgid ""
+"курстар, СММ, онлайн курстар, бизнес жасау, маркетинг, бағдарламалау, "
+"дизайн, ағылшын тілі"
+msgstr ""
+
+#: templates/base.html:15 templates/kurstar/base.html:13
+msgid "Kurstar.kz - онлайн курстар платформасы"
+msgstr "Kurstar.kz - Онлайн платформа курсов востребованных профессии"
+
+#: templates/base.html:59 templates/kurstar/base.html:54
+#: templates/kurstar/mainkz.html:5
+msgid "Басты"
+msgstr "Главная"
+
+#: templates/base.html:60 templates/kurstar/base.html:55
+msgid "Курстар"
+msgstr "Курсы"
+
+#: templates/base.html:61 templates/kurstar/about.html:4
+#: templates/kurstar/base.html:56
+msgid "Байланыс"
+msgstr "Связаться"
+
+#: templates/base.html:103 templates/kurstar/base.html:98
+msgid "Менің курстарым"
+msgstr "Мои курсы"
+
+#: templates/base.html:133 templates/kurstar/base.html:129
+msgid "Бас программист:"
+msgstr "Главный программист"
+
+#: templates/base.html:145 templates/kurstar/base.html:141
+msgid "Бас дизайнер:"
+msgstr "Главный дизайнер"
+
+#: templates/base.html:158 templates/kurstar/base.html:154
+msgid "ЖШС"
+msgstr "ТОО"
+
+#: templates/base.html:159
+msgid ""
+"Жауапкершілігі шектеулі серіктестік «Бизнес Қауымдастық» <br>Юридический "
+"адрес: Республика Казахстан, г. Алматы, Байзакова 280"
+msgstr ""
+"Товарищество с ограниченной ответственностью «Бизнес-Сообщество» "
+"<br>Юридический адрес: Республика Казахстан, г. Алматы, Байзакова 280"
+
+#: templates/base.html:162 templates/kurstar/base.html:159
+msgid "Kurstar.kz туралы әлеуметтік <br>желілерде көбірек біліңіз:"
+msgstr "Подписывайтесь и читайте <br>о Kurstar.kz в социальных сетях"
+
+#: templates/base.html:206 templates/kurstar/base.html:203
+msgid "ЖАЗУ"
+msgstr "НАПИСАТЬ"
+
+#: templates/kurstar/about.html:7
+msgid "Контакты"
+msgstr ""
+
+#: templates/kurstar/base.html:155
+msgid ""
+"Жауапкершілігі шектеулі серіктестік «Бизнес Қауымдастық» <br> Юридический "
+"адрес: Республика Казахстан, г. Алматы, Байзакова 280"
+msgstr ""
+"Товарищество с ограниченной ответственностью «Бизнес-Сообщество» "
+"<br>Юридический адрес: Республика Казахстан, г. Алматы, Байзакова 280"
+
+#: templates/kurstar/mainkz.html:34
+msgid "Сұранысқа ие <p>мамандықтардың №1</p> онлайн платформасы"
+msgstr "Онлайн платформа <p>№1 востребованных</p> профессий"
+
+#: templates/kurstar/mainkz.html:38
+msgid "Курсты сатып ал да алғашқы <br>табысыңды тап"
+msgstr "Купи курс и начни <br>зарабатывать уже сегодня!"
+
+#: templates/kurstar/mainkz.html:42
+msgid "Курсты өту"
+msgstr "Пройти курс"
+
+#: templates/kurstar/mainkz.html:48
+#, python-format
+msgid "Қазір өтініш қалдырыңыз және 20%% жеңілдік алыңыз"
+msgstr "Оставьте заявку сейчас и получите скидку 20%%"
+
+#: templates/kurstar/mainkz.html:57
+msgid "Аты-жөніңіз"
+msgstr "ФИО"
+
+#: templates/kurstar/mainkz.html:76
+msgid "Маған қоңырау шалыңыз!"
+msgstr "Позвоните мне!"
+
+#: templates/kurstar/mainkz.html:85
+msgid "Өтініш жібере отырып, мен жеке деректерді өңдеуге келісемін"
+msgstr ""
+"Нажимая кнопку 'Позвоните мне!' вы даете согласие на обработку персональных "
+"данных"
+
+#: templates/kurstar/mainkz.html:98
+msgid "Толығырақ 5 минуттық видеодан танысу"
+msgstr "Узнать подробнее из 5 минутного видео"
+
+#: templates/kurstar/mainkz.html:132
+msgid "БІЗДІҢ КУРСТАР"
+msgstr "НАШИ КУРСЫ"
+
+#: templates/kurstar/mainkz.html:146
+msgid "Қай курсты таңдауды білмейсің бе? Тегін кеңес алуға жазыл!"
+msgstr "Не знаешь какой курс выбрать? Запишись на бесплатную консультанцию!"
+
+#: templates/kurstar/mainkz.html:147
+msgid "ТЕГІН КЕҢЕСТІ АЛУ"
+msgstr "ПОЛУЧИТЬ БЕСПЛАТНУЮ КОНСУЛЬТАНЦИЮ"
+
+#: templates/kurstar/mainkz.html:158
+msgid "21 жаста, Блоггер "
+msgstr "21 лет, Блоггер"
+
+#: templates/kurstar/mainkz.html:159
+msgid ""
+"Мен әлеуметтік желіде танымал болғым келді, бірақ қалай екенін білмедім "
+"<span> “Instagram деген не?”</span> курсы арқылы өз нәтижеме жеттім."
+msgstr ""
+"Я хотела стать знаменитой но не знала как. Курс <span>“Instagram деген не?”</"
+"span> помог мне продвинуть свой Instagram и найти свое призвание."
+
+#: templates/kurstar/mainkz.html:161
+msgid "70.000 подписчик жинадым"
+msgstr "Набрал 70.000 подписчиков"
+
+#: templates/kurstar/mainkz.html:162
+msgid "Өз инстаграмымды ашып, бизнесімді жүргізе бастадым"
+msgstr "Открыла и продвинула свой бизнес в Instagram"
+
+#: templates/kurstar/mainkz.html:163
+msgid "Өз жеке брэндімді нөлден бастап қалыптастырдым"
+msgstr "Создала свой личный бренд с нуля"
+
+#: templates/kurstar/mainkz.html:165
+msgid "“INSTAGRAM ДЕГЕН НЕ?” туралы толығырақ"
+msgstr "ПОДРОБНЕЕ ПРО КУРС “INSTAGRAM ДЕГЕН НЕ?”"
+
+#: templates/kurstar/mainkz.html:179
+msgid "28 жаста, Жеке кәсіпкер"
+msgstr "28 лет, Предприниматель "
+
+#: templates/kurstar/mainkz.html:180
+msgid ""
+"Kurstar маған ағылшын тілін барынша жоғары деңгейде үйренуге көмектесті және "
+"болашағыма жол ашты"
+msgstr ""
+"Kurstar помогли мне выучить английский язык до уровня носителя и открыли мне "
+"двери в мое будущее"
+
+#: templates/kurstar/mainkz.html:182
+msgid "Ақтау қаласынан Астанаға көштім"
+msgstr "Переехал из Актау в Астану"
+
+#: templates/kurstar/mainkz.html:183
+msgid "IELTS-тан 7.0 алдым"
+msgstr "Набрал IELTS 7.0"
+
+#: templates/kurstar/mainkz.html:184
+msgid "Халықаралық компанияға жұмысқа қабылдандым"
+msgstr "Был принят в международную компанию"
+
+#: templates/kurstar/mainkz.html:187
+msgid "“IELTS“ курсы туралы толығырақ"
+msgstr "ПОДРОБНЕЕ ПРО КУРС “IELTS”"
+
+#: templates/kurstar/mainkz.html:197
+msgid "35 жаста, Бизнесмен"
+msgstr "35 лет, Бизнесмен"
+
+#: templates/kurstar/mainkz.html:198
+msgid ""
+"Өмірімде жақсы өзгерістер бола бастады. Өз бизнесімнің алға дамуына жол аштым"
+msgstr ""
+"Застой в жизни сменился новыми результатами. Открыл новые дороги для "
+"развития своего бизнеса"
+
+#: templates/kurstar/mainkz.html:200
+msgid "Өз бизнесімді аштым"
+msgstr "Открыл свой бизнес"
+
+#: templates/kurstar/mainkz.html:201
+msgid "Toyota Camry 70 автокөлігін сатып алдым"
+msgstr "Купил Toyota Camry 70"
+
+#: templates/kurstar/mainkz.html:202
+msgid "Әке-шешемді Дубайға апардым"
+msgstr "Свозил родителей в Дубаи"
+
+#: templates/kurstar/mainkz.html:204
+msgid "“БИЗНЕС” курсы туралы толығырақ"
+msgstr "ПОДРОБНЕЕ ПРО КУРС “БИЗНЕС”"
+
+#: templates/kurstar/mainkz.html:215
+msgid "Сіз неге бізді таңдауыңыз керек?"
+msgstr "Почему вы должны выбрать именно нас?"
+
+#: templates/kurstar/mainkz.html:222
+msgid "Курстар онлайн өтеді"
+msgstr "Онлайн прохождение курса"
+
+#: templates/kurstar/mainkz.html:225
+msgid "Курсты <b>кез-келген уақытта</b> оқы"
+msgstr "Проходи свой курс <b>в любое время</b>"
+
+#: templates/kurstar/mainkz.html:226
+msgid "Саған тек <b>телефон немесе ноутбук</b> керек"
+msgstr "Тебе нужен только <b>телефон или ноутбук</b>"
+
+#: templates/kurstar/mainkz.html:227
+msgid "Оқып, мамандык алып, <b>бүгіннен бастап</b> табысты тап"
+msgstr "Обучись, получи профессию и зарабатывай <b>сейчас</b>"
+
+#: templates/kurstar/mainkz.html:234
+msgid "Кураторлар әрқашан көмек көрсететін болады"
+msgstr "Полное сопровождение кураторами"
+
+#: templates/kurstar/mainkz.html:236
+msgid ""
+"Әр курстың өз кураторы бар. Сұрақ қойып, тапсырмаларды <b>WhatsApp, "
+"Telegram</b> арқылы жібер, кері байланыс ал."
+msgstr ""
+"У каждого курса есть свои кураторы. Задавай любые вопросы, отправляй "
+"домашние задания через <b>WhatsApp и Telegram</b> и получай обратную связь."
+
+#: templates/kurstar/mainkz.html:248
+msgid "Курсты аяқтағаннан кейін сіз аласыз"
+msgstr "После прохождения курса вы получите"
+
+#: templates/kurstar/mainkz.html:251
+msgid "Курсты өту бойынша <b>сертификат</b>"
+msgstr "<b>Сертификат</b> о прохождении курса"
+
+#: templates/kurstar/mainkz.html:252
+msgid "Мықты әрі білімді <b>орта</b>"
+msgstr "Сильное <b>окружение</b>"
+
+#: templates/kurstar/mainkz.html:253
+msgid "<b>Кепілдендірілген</b> нәтиже"
+msgstr "<b>Гарантированный</b> результат"
+
+#: templates/kurstar/mainkz.html:260
+msgid "Қазақ тіліндегі алғашқы онлайн платформа"
+msgstr "Первая онлайн платформа на казахском языке"
+
+#: templates/kurstar/mainkz.html:262
+msgid "Платформадағы барлық курстар <b>таңдалған тілінде</b> жүргізіледі."
+msgstr "Все курсы на платформе проходят на <b>выбранном языке</b>"
+
+#: templates/kurstar/mainkz.html:275
+msgid "Жиі қойылатын сұрақтарға жауаптар"
+msgstr "Ответы на часто задаваемые вопросы"
+
+#: templates/kurstar/mainkz.html:280
+msgid "Kaspi Gold арқылы төлем жасай аламын ба?"
+msgstr "Можно оплатить через Kaspi Gold?"
+
+#: templates/kurstar/mainkz.html:287
+msgid "Курсты қалай сатып аламын?"
+msgstr "Как купить курс?"
+
+#: templates/kurstar/mainkz.html:294
+msgid "Барлық курстарда кураторлар бола ма?"
+msgstr "Кураторы есть на всех курсах?"
+
+#: templates/kurstar/mycourses.html:10
+#, fuzzy
+msgid "Менің курстар"
+msgstr "Мои курсы"
+
+#: templates/kurstar/thanks.html:23
+msgid "Cіз қалдырған өтінішіңіз үшін рахмет"
+msgstr "Спасибо! Мы скоро свяжемся с вами!"
+
+#: templates/kurstar/thanks.html:24
+msgid "БАСТЫ"
+msgstr "ГЛАВНАЯ"
+
+#~ msgid "Пікірлер"
+#~ msgstr "Отзывы"
+
+#~ msgid "Біздің артықшылығымыз"
+#~ msgstr "Наши преимущества"
+
+#~ msgid "Сұрақтар"
+#~ msgstr "Вопросы"

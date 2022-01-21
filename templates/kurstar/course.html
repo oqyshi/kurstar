@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+<head>
+  <link rel="shortcut icon" type="image/png" href="{% static 'img/common/logo.png' %}">
+  <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'css/courses.css' %}">
+  <title>{{course.title}}</title>
+</head>
+<body>
+<div class="kurstar">
+  <section class="navbar">
+    <div class="navbar__item">
+      <a href="{% url 'kurstar:index' %}"><img src="{% static 'img/common/logo.png' %}" alt="icon"></a>
+    </div>
+    <div class="navbar__item">
+      <a href="{% url 'kurstar:mycourses' %}"><img src="{% static 'img/courses/image 76.png' %}" alt="icon"></a>
+    </div>
+  </section>
+  <section class="content">
+    <div class="container">
+      <h2 class="content__heading">kurstar</h2>
+      <h1 class="content__courcelist">Курс "{{course.title}}"</h1>
+      <div class="demyan">
+        <div class="nazovi">
+          {% for lesson in lessons %}
+          {% if lesson.visible %}
+          <form action="{% url 'kurstar:lesson_detail' course.id lesson.id %}" class="inline">
+            <div class="etiblocki">
+              <a href="/Course1/index.html">
+                <button><img src="{% static 'img/courses/grow.png' %}" alt=""></button>
+              </a>
+              <div class="etiblocki__content">
+                <h4>Есть задание</h4>
+                <h2>Урок №{{lesson.number}}. {{lesson.title}}</h2>
+                <!--                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>-->
+              </div>
+            </div>
+          </form>
+          {% endif %}
+          {% endfor %}
+
+        </div>
+
+        <!--        <div class="sampls">-->
+        <!--          <h2 class="achievements">Ваши достижения</h2>-->
+        <!--          <div class="achievements__progress">-->
+        <!--            <h4>Прогресс</h4>-->
+        <!--            <p>62 балла</p>-->
+        <!--          </div>-->
+        <!--          <p class="sampls__p">Пройдено: 83%</p>-->
+        <!--        </div>-->
+      </div>
+    </div>
+  </section>
+</div>
+</body>
+</html>

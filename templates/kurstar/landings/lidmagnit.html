@@ -1,0 +1,33 @@
+{% extends "kurstar/landings/base.html" %}
+{% load static %}
+{% block content %}
+<section class="start"
+         style="background-image: url('/static/img/lidmagnit/bg.svg');width:100%;height:auto;background-repeat:no-repeat;background-size: cover;">
+  <div class="container">
+    <div class="offer row">
+      <div class="col-12 col-lg-6 d-flex flex-column justify-content-center">
+        <h2 class="lid-magnit">
+          Секреты и фишки фото <br>
+          и видео-съемки на <br>
+          бюджетном телефоне</h2>
+        <h2 class="lid-magnit2">Оставь данные и получи <b>чек-лист</b></h2>
+        <form action="{% url 'kurstar:lidmagnitcallme' %}" method="POST"
+              class="d-flex flex-column justify-content-center align-items-center">
+          {% csrf_token %}
+          <input placeholder="Имя" class="course5__input input" type="text" name="name" style="background: #FFFFFF;border-radius: 50px;border:none;height:50px;padding-left:30px;" required>
+          <input placeholder="Телефон" class="course5__input input" type="text" name="number" style="background: #FFFFFF;border-radius: 50px;border:none;height:50px;padding-left:30px;" required>
+          <input placeholder="E-mail" class="course5__input input" type="email" name="email" style="background: #FFFFFF;border-radius: 50px;border:none;height:50px;padding-left:30px;" required>
+          <input style='visibility: hidden;' type="textarea" name="comment" value="Лид-Магнит">
+          <div class="course5__checkbox checkbox"><input type="checkbox" onclick="check()" required>
+            <p>Я соглашаюсь на обработку персональных данных</p></div>
+          <button class="btn" type="submit"><p>ПОЛУЧИТЬ ЧЕК-ЛИСТ!</p></button>
+        </form>
+      </div>
+      <div class="col-12 col-lg-6 offer-right">
+        <img src="{% static 'img/lidmagnit/book.svg' %}" alt="" width="100%" height="auto">
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

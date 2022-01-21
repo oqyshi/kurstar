@@ -1,0 +1,8 @@
+
+User-agent: *
+Disallow: /admin/
+Disallow: /ckeditor/
+Disallow: /*/accounts/
+
+Host: https://kurstar.kz
+Sitemap: https://kurstar.kz/sitemap.xml

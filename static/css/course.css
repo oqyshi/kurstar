@@ -1,0 +1,161 @@
+*{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+a{	
+	text-decoration: none;
+	display: inline-block;
+	color: black;
+	width: 100%;
+}
+ul,li{
+	list-style: none;
+}
+body{
+	margin: 0 auto;
+	font-family: Montserrat;
+	color: #000;
+    display: grid;
+	grid-template-columns: 10% 90%;
+	/* justify-items: start; */
+	width: 100%;
+	height: 100%;
+}
+.container{
+	max-width: 1400px;
+}
+.title {
+	font-size: 36px;
+	line-height: 50px;
+	border-bottom: 2px solid #D9D9D9;
+	margin-bottom: 50px;
+}
+.logo{
+	text-align: center;
+	width: 100%;
+	font-size: 20px;
+	color: #D9D9D9;
+	padding: 5px 0 50px 0;
+}
+
+.lesson {
+	padding-right: 15px;
+}
+
+.navbar {
+    width: 65px;
+    height: 100%;
+    border-right: 1px solid #000000;
+    background-color: #003D92;
+}
+
+.navbar__item {
+    display: block;
+    height: 50px;
+    width: 100%;
+    background: #ffffff;
+    border-top: 1px solid black;
+    padding: 5px;
+}
+
+.navbar__item img {
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+.lesson__content {
+	max-width: 839px;
+}
+
+.lesson__description{
+	width: 100%;
+	background: #F0F0F0;
+	border: 1px solid #003D92;
+	border-radius: 5px;
+	margin-bottom: 30px;
+	padding: 15px;
+}
+.lesson__name{
+	font-size: 24px;
+	color: #000000;
+	margin-top: 15px;
+	text-align: center;
+	white-space: nowrap;
+	margin-bottom: 50px;
+}
+.lesson__other{
+	display: flex;
+	justify-content: space-between;
+}
+.lesson__before{
+	width: 140px;
+	height: 38px;
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 16px;
+}
+.lesson__before a{
+	color: #003D92;
+}
+.lesson__after a{
+	color: #003D92;
+}
+.lesson__video{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+}
+.lesson__video iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+}
+.lessons__conclusion{
+	margin-top: 40px;
+}
+
+.lessons__conclusion > p {
+	margin: 20px 0;
+}
+
+
+@media (max-width: 700px) {
+    body {
+        grid-template-columns: 100%;
+	}
+
+	.navbar {
+		display: none;
+	}
+
+	.lesson {
+		padding: 15px;
+	}
+}
+
+@media (max-width: 640px) {
+	.lesson__name{
+		margin-bottom: 50px;
+	}
+	.lesson__other{
+		flex-direction: column;
+		align-items: center;
+	}
+	.lesson__other > div {
+		margin: 5px;
+	}
+}
+
+@media (max-width: 450px) {
+	.title{
+		font-size: 25px;
+		line-height: 35px;
+	}
+}

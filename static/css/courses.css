@@ -1,0 +1,258 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+	font-family: Montserrat;
+}
+
+.kurstar {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 10% 90%;
+}
+
+.navbar {
+    width: 65px;
+    height: 100%;
+    border-right: 1px solid #000000;
+    background-color: #003D92;
+}
+
+.navbar__item {
+    display: block;
+    height: 50px;
+    width: 100%;
+    background: #ffffff;
+    border-top: 1px solid black;
+    padding: 5px;
+}
+
+.navbar__item img {
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.content {
+    float: right;
+}
+
+.content__heading {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0 auto;
+    color: #D9D9D9;
+    font-size: 48px;
+    text-transform: uppercase;
+    font-family: 'montserrat';
+}
+
+.content__courcelist {
+    width: 100%;
+    padding-top: 100px;
+    font-size: 36px;
+    font-weight: 500;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #D9D9D9;
+}
+
+.ielts {
+    width: 100%;
+    padding-top: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #D9D9D9;
+}
+
+.heading {
+    color: #003D92;
+    font-size: 25px;
+}
+
+.paragraph {
+    font-size: 20px;
+    color: #000000;
+    font-style: normal;
+}
+
+.webdesign {
+    width: 100%;
+    padding-top: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #D9D9D9;
+}
+
+.paragraph {
+    font-size: 17px;
+    color: #000000;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+
+/*! .demyan {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid: 'lessons lessons achievements';
+} */
+
+    .demyan {
+        display: flex;
+        justify-content: space-between;
+    }
+
+.etiblocki {
+    position: relative;
+    margin-top: 25px;
+    border: 1px solid black;
+    border-radius: 10px;
+    min-height: 150px;
+    display: flex;
+    flex-wrap: nowrap;
+    margin-right: 10px;
+}
+
+.etiblocki button {
+    display: inline-block;
+    border: none;
+    border-radius: 10px 0 0 10px;
+    background: #003D92;
+    height: 100%;
+    min-height: 150px;
+    padding: 0 20px;
+    cursor: pointer;
+}
+
+.etiblocki button p {
+    color: #ffffff;
+    font-size: 36px;
+    font-weight: normal;
+}
+
+.etiblocki__content {
+    max-width: 700px;
+    padding: 10px;
+}
+
+.etiblocki__content h4 {
+    color: #003D92;
+    font-size: 16px;
+}
+
+.etiblocki__content h1 {
+    padding-top: 5px;
+    font-size: 18px;
+    font-family: "montserrat";
+}
+
+.etiblocki__content p {
+    padding-top: 7px;
+    font-size: 14px;
+    font-family: 'montserrat';
+}
+
+.sampls {
+    margin: 20px 20px 0 40px;
+    max-width: 450px;
+}
+
+.achievements {
+    width: 100%;
+    font-size: 18px;
+    font-weight: 500;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #D9D9D9;
+    font-family: 'montserrat';
+    font-weight: 100;
+}
+
+.achievements__progress {
+    margin-top: 7px;
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+}
+
+.achievements__progress h4 {
+    color: #003D92;
+    font-size: 16px;
+}
+
+.achievements__progress p {
+    font-size: 14px;
+    text-align: center;
+    border: 1px solid transparent;
+    background: #ABABAB;
+    border-radius: 20px;
+    color: #ffffff;
+    width: 90px;
+}
+
+.sampls__p{
+    margin-top: 10px;
+    text-align: center;
+    border: 2px solid #ABABAB;
+    border-radius: 20px;
+    font-size: 14px;
+    padding: 10px;
+    width: 150px;
+    font-family: 'montserrat';
+}
+
+
+@media (max-width: 700px) {
+
+    .demyan {
+        flex-direction: column-reverse;
+    }
+
+    .navbar {
+        display: none;
+    }
+    .kurstar {
+        grid-template-columns: 100%;
+    }
+
+    .sampls {
+        margin: 20px 0;
+    }
+
+    .achievements__progress p {
+        font-size: 15px;
+        width: 70px;
+    }
+
+    .etiblocki__content p {
+        font-size: 15px;
+        min-width: 100px;
+    }
+
+    .heading {
+        font-size: 20px;
+    }
+
+    .paragraph {
+        font-size: 15px;
+    }
+}
+
+
+@media (max-width: 1190px) {    
+    .achievements__progress p {
+        font-size: 12px;
+        width: 70px;
+    }
+}
+

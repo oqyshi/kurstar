@@ -1,0 +1,275 @@
+{% extends "kurstar/landings/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<section class="start">
+  <div class="container">
+    <div class="offer">
+      <div class="offer-left">
+        <h1 class="offer-left_h1">
+          IELTS - тың 2 <br>баллын 2 - ақ <br>айда жинап ал!
+        </h1>
+        <p class="offer-left_p">7 жыл жұмыс тәжірибесі бар, IELTS <br> 8,5 – ке тапсырған мұғаліммен оқы</p>
+        <!--        <form action="{% url 'kurstar:course_detail' 1 %}" class="inline">-->
+        <!--          <button class="offer-left_button">-->
+        <!--            <p>КУРСТЫ ӨТУ</p>-->
+        <!--          </button>-->
+        <!--        </form>-->
+        <button class="offer-left_button" onclick='modal("myModal")'>
+          <p>КУРСТЫ ӨТУ</p>
+        </button>
+
+      </div>
+      <div class="offer-right">
+        <img class="offer-right_img1" src="{% static 'img/landings/kz__discount.svg' %}" alt="">
+
+        <img class="offer-right_img" src="{% static 'img/ieltskz/headerimg2.svg' %}" alt="">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="for">
+  <div class="container container-menos">
+    <h2 class="title">Бұл курс</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="{% static 'img/ieltskz/for-1.svg' %}" alt="">
+        <p>Назарбаев университетіне түскісі келетіндерге</p>
+      </div>
+      <div class="card">
+        <img src="{% static 'img/ieltskz/for-2.svg' %}" alt="">
+        <p>АҚШ, Европа және Қытай университеттеріне түскісі келетіндерге</p>
+      </div>
+      <div class="card">
+        <img src="{% static 'img/ieltskz/for-3.svg' %}" alt="">
+        <p>IELTS – ті жақсыбаллға тапсырғысы келетіндерге</p>
+      </div>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <img src="{% static 'img/ieltskz/for-4.svg' %}" alt="">
+        <p>Халықаралық компанияларда жұмыс істегісі келетіндерге</p>
+      </div>
+      <div class="card">
+        <img src="{% static 'img/ieltskz/for-5.svg' %}" alt="">
+        <p>Шетел тілін үйренуге келетіндерге</p>
+      </div>
+      <div class="card">
+        <img src="{% static 'img/ieltskz/for-6.svg' %}" alt="">
+        <p>Жайғана жер шарын аралап келетіндерге</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="record">
+  <div class="container container-menos">
+    <h2 class="title">Курсқа жазылыңыздар</h2>
+
+    <form class="record__content" method="POST" action="{% url 'kurstar:callme' %}">
+      {% csrf_token %}
+      <div class="record__forms">
+
+        <input placeholder="Аты-жөніңіз" class="record__input input" type="text" name="name" required>
+        <input placeholder="Телефон" class="record__input input" type="text" name="number" required>
+        <input placeholder="E-mail" class="record__input input" type="email" name="email" required>
+        <input style='visibility: hidden;' type="textarea" name="comment" value="С лэндинга IELTS 1">
+        <div class="record__checkbox checkbox"><input type="checkbox" onclick="check()" required>
+          <p>Мен өзімнің жеке ақпараттарымды өңдеуге рұқсат беремін</p>
+        </div>
+      </div>
+      <button class="btn" type="submit">КУРСҚА ЖАЗЫЛУ</button>
+    </form>
+
+  </div>
+</section>
+
+<section class="profit">
+  <div class="container container-menos">
+    <h2 class="title">Осы курсты өткеннен кейін сіз келесі <br> қабілеттерге ие болсыз:</h2>
+    <div class="profit__cards">
+      <div class="profit__card">
+        <div class="course1-img"><img src="{% static 'img/landings/aw.svg' %}" alt=""></div>
+        <p>IELTS – жақсы баллға қалай оңай тапсыру әдістері</p>
+      </div>
+      <div class="profit__card">
+        <div class="course1-img"><img src="{% static 'img/landings/aw.svg' %}" alt=""></div>
+        <p>Ағылшын тілінде жазылған ақпаратты дұрыс өңдей алатын боласыздар</p>
+      </div>
+      <div class="profit__card">
+        <div class="course1-img"><img src="{% static 'img/landings/aw.svg' %}" alt=""></div>
+        <p>Құрылымы дұрыс жоғарғы деңгейдегі эссе жаза аласыздар</p>
+      </div>
+    </div>
+    <div class="profit__cards">
+      <div class="profit__card">
+        <div class="course1-img"><img src="{% static 'img/landings/aw.svg' %}" alt=""></div>
+        <p>IELTS – та жиі жасалатын қателіктер туралы естіп білесіздер</p>
+      </div>
+      <div class="profit__card">
+        <div class="course1-img"><img src="{% static 'img/landings/aw.svg' %}" alt=""></div>
+        <p>IELTS - ты 8,5 - ке тапсырған адамға жеке сұрақтарыңызды қоя аласыздар</p>
+      </div>
+      <div class="profit__card">
+        <div class="course1-img"><img src="{% static 'img/landings/aw.svg' %}" alt=""></div>
+        <p>IELTS – тың 2 баллын 2 – ақ айда ала аласыздар</p>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<section class="course2">
+  <div class="container container-menos">
+    <h2 class="title">Біз сізге:</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="{% static 'img/ieltskz/for-7.svg' %}" alt="">
+        <p>30% теория және 70% практика</p>
+      </div>
+      <div class="card">
+        <img src="{% static 'img/ieltskz/for-8.svg' %}" alt="">
+        <p>Үй жұмысын тексеру және қатемен жұмыс мүмкіндіктерін береміз</p>
+      </div>
+      <div class="card">
+        <img src="{% static 'img/ieltskz/for-9.svg' %}" alt="">
+        <p>Личное кураторство</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="record">
+  <div class="container container-menos">
+    <h2 class="title">Курсқа жазылыңыздар</h2>
+
+    <form class="record__content" method="POST" action="{% url 'kurstar:callme' %}">
+      {% csrf_token %}
+      <div class="record__forms">
+
+        <input placeholder="Аты-жөніңіз" class="record__input input" type="text" name="name" required>
+        <input placeholder="Телефон" class="record__input input" type="text" name="number" required>
+        <input placeholder="E-mail" class="record__input input" type="email" name="email" required>
+        <input style='visibility: hidden;' type="textarea" name="comment" value="С лэндинга IELTS 2">
+        <div class="record__checkbox checkbox"><input type="checkbox" onclick="check()" required>
+          <p>Мен өзімнің жеке ақпараттарымды өңдеуге рұқсат беремін</p>
+        </div>
+      </div>
+      <button class="btn" type="submit">КУРСҚА ЖАЗЫЛУ</button>
+    </form>
+
+  </div>
+</section>
+
+<section class="course3 d-flex justify-content-center">
+  <div class="container">
+    <h2 class="title">Сабақтар қалай өтетін болады:</h2>
+    <div class="course3__cards cards">
+      <div class="course3__card card">
+        <div class="course3-img"><img src="{% static 'img/ieltskz/one.svg' %}" alt=""></div>
+        <p>Видео сабақтарды қарап өтесіздер</p>
+      </div>
+      <div class="course3__card card">
+        <div class="course3-img"><img src="{% static 'img/ieltskz/two.svg' %}" alt=""></div>
+        <p>Үй жұмысын орындайыздар</p>
+      </div>
+      <div class="course3__card card">
+        <div class="course3-img"><img src="{% static 'img/ieltskz/three.svg' %}" alt=""></div>
+        <p>Куратормен жұмыс істейсіздер</p>
+      </div>
+      <div class="course3__card card">
+        <div class="course3-img"><img src="{% static 'img/ieltskz/four.svg' %}" alt=""></div>
+        <p>Соңында IELTS – тапсырасыздар</p>
+      </div>
+    </div>
+    <button class="course3__btn btn" onclick='modal("myModal")'><p>Курсқа жазылу</p></button>
+  </div>
+</section>
+
+<section class="course4">
+  <div class="container container-menos">
+    <div class="course4__content">
+      <h2 class="title">Диплом Kurstar</h2>
+      <div class="course4__card">
+        <img src="{% static 'img/landings/aw.svg' %}" alt="">
+        <p>Сіз курстарды толығымен <br>өткендеріңізді дәлелдейді</p>
+      </div>
+      <div class="course4__card">
+        <img src="{% static 'img/landings/aw.svg' %}" alt="">
+        <p>Маман шебері екендігіңізді <br>дәлелдейді</p>
+      </div>
+      <div class="course4__card">
+        <img src="{% static 'img/landings/aw.svg' %}" alt="">
+        <p>Жұмысқа немесе стажировкаға <br>орналасуға көмектеседі</p>
+      </div>
+    </div>
+    <img class="course4__image" src="{% static 'img/ieltskz/certificate.svg' %}" alt="">
+  </div>
+</section>
+
+<section class="course5">
+  <div class="container">
+    <h2 class="title">Курстың бағасы</h2>
+    <div class="course5__content">
+      <div class="course5-content_left_rectangle d-flex flex-column justify-content-center align-items-center">
+        <div><h2>5 000 тг</h2></div>
+        <div><h3>40 000 тг</h3></div>
+        <h4>*3 күннің ішінде</h4>
+      </div>
+      <div class="course5__forms">
+        <h2>Курсқа жазыл</h2>
+        <form action="{% url 'kurstar:callme' %}" method="POST"
+              class="d-flex flex-column justify-content-center align-items-center">
+          {% csrf_token %}
+          <input placeholder="Аты-жөніңіз" class="course5__input input" type="text" name="name" required>
+          <input placeholder="Телефон" class="course5__input input" type="text" name="number" required>
+          <input placeholder="E-mail" class="course5__input input" type="email" name="email" required>
+          <input style='visibility: hidden;' type="textarea" name="comment" value="С лэндинга IELTS 3">
+          <div class="course5__checkbox checkbox"><input type="checkbox" onclick="check()" required>
+            <p>Мен өзімнің жеке ақпараттарымды өңдеуге рұқсат беремін</p></div>
+          <button class="btn" type="submit"><p>КУРСҚА ЖАЗЫЛУ</p></button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="FAQ">
+  <div class="container container-menos">
+    <div class="title">Жиі қойылатын сұрақтар:</div>
+
+    <div class="tabs">
+      <div class="tab">
+        <input id="tab-one" type="checkbox" name="tabs">
+        <label for="tab-one">Каспи Голд арқылы төлей аламын ба?</label>
+        <div class="tab-content">
+          <p>...</p>
+        </div>
+      </div>
+      <div class="tab">
+        <input id="tab-two" type="checkbox" name="tabs">
+        <label for="tab-two">Курсты қашан бастасам болады?</label>
+        <div class="tab-content">
+          <p>...</p>
+        </div>
+      </div>
+      <div class="tab">
+        <input id="tab-three" type="checkbox" name="tabs">
+        <label for="tab-three">Кураторлар әрдайым сұрақтарғажауап береді ма?</label>
+        <div class="tab-content">
+          <p>...</p>
+        </div>
+      </div>
+      <div class="tab">
+        <input id="tab-four" type="checkbox" name="tabs">
+        <label for="tab-four">Курстың өту мерзімі қандай?</label>
+        <div class="tab-content">
+          <p>...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

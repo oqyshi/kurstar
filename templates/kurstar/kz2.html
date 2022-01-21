@@ -1,0 +1,212 @@
+{% extends "kurstar/base.html" %}
+{% load static %}
+{% block content %}
+
+<!-- SECTION - About -->
+<section id="about">
+  <div class="container">
+    <div class="about__photo">
+      <img src="{% static 'img/mainkz/offer.png' %}" alt="">
+    </div>
+    <div class="about__content">
+      <div class="about__title">
+        <h1>Сұранысқа ие <p>мамандықтардың </p> онлайн платформасы</h1>
+      </div>
+      <div class="about__desription">
+        <p>Курсты сатып ал да алғашқы табысыңды тап</p>
+      </div>
+      <div class="buttons">
+        <button class="about__getCourse btn"> Курсты өту</button>
+        <div class="about__ornament">
+          <a href="#">
+            <img src="{% static 'img/mainkz/button1.png' %}" alt="ornament">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION - Courses -->
+<section id="courses">
+  <div class="container">
+    <h2 class="title">БІЗДІҢ КУРСТАР</h2>
+
+    <div class="courses__group">
+
+      {% for course in courses %}
+
+
+      <a class='course' href="{% url 'kurstar:course_landing' course.id %}">
+        <img src="{{course.banner.url}}" alt="{{course.banner.url}}" style="width:100%;height:100%;">
+      </a>
+
+      {% endfor %}
+
+
+    </div>
+    <div class="courses__help">
+      <p class="consultation__text">Қай курсты таңдауды білмейсің бе? Тегін кеңес алуға жазыл!</p>
+      <button class="consultation__btn btn">ТЕГІН КЕҢЕСТІ АЛУ</button>
+    </div>
+  </div>
+</section>
+
+<section id="teachers">
+  <div class="container">
+    <div class="teacher">
+      <div class="teacher__description">
+        <h2>АЙДАНА ЖУМАЛИЕВА</h2>
+        <h3>21 жаста, Блоггер </h3>
+        <p>Мен әлеуметтік желіде танымал болғым келді, бірақ қалай екенін білмедім <span> “Instagram деген не?”</span>
+          курсы арқылы өз нәтижеме жеттім.</p>
+        <ul>
+          <li>70.000 подписчик жинадым</li>
+          <li>Өз инстаграмымды ашып, бизнесімді жүргізе бастадым</li>
+          <li>Өз жеке брэндімді нөлден бастап қалыптастырдым</li>
+        </ul>
+        <button class="teacher__more btn">“INSTAGRAM ДЕГЕН НЕ?” туралы толығырақ</button>
+      </div>
+      <div class="teachers__photo">
+        <img src="{% static 'img/mainkz/teacher1.png' %}" alt="1">
+      </div>
+    </div>
+
+    <!-------------------------------------------->
+    <div class="teacher blue">
+      <div class="teachers__photo">
+        <img src="{% static 'img/mainkz/teacher2.png' %}" alt="2">
+      </div>
+      <div class="teacher__description">
+        <h2>ДИМАШ БОЛАТ </h2>
+        <h3>28 жаста, Жеке кәсіпкер</h3>
+        <p>Kurstar маған ағылшын тілін барынша жоғары деңгейде үйренуге көмектесті және болашағыма жол ашты </p>
+        <ul>
+          <li>Ақтау қаласынан Астанаға көштім</li>
+          <li>IELTS-тан 7.0 алдым</li>
+          <li>Халықаралық компанияға жұмысқа қабылдандым</li>
+        </ul>
+        <button class="teacher__more btn">IELTS" курсы туралы толығырақ</button>
+      </div>
+    </div>
+
+    <!-------------------------------------------->
+    <div class="teacher red">
+      <div class="teacher__description">
+        <h2>БАУЫРЖАН ТОЛЕБАЕВ </h2>
+        <h3>35 жаста, Бизнесмен</h3>
+        <p> Өмірімде жақсы өзгерістер бола бастады. Өз бизнесімнің алға дамуына жол аштым</p>
+        <ul>
+          <li>Өз бизнесімді аштым</li>
+          <li>Toyota Camry 70 автокөлігін сатып алдым</li>
+          <li>Әке-шешемді Дубайға апардым</li>
+        </ul>
+        <button class="teacher__more btn">"IELTS" курсы туралы толығырақ</button>
+      </div>
+      <div class="teachers__photo">
+        <img src="{% static 'img/mainkz/teacher1.png' %}" alt="3">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="motivation">
+  <div class="container">
+    <h1 class="title">Сіз неге бізді таңдауыңыз керек?</h1>
+    <div class="advantages">
+      <div class="advantage first">
+        <div class="advantage__image">
+          <img src="{% static 'img/mainkz/Group 1.png' %}" alt="Advantage">
+        </div>
+        <div class="advantage__text">
+          <h2 class="advantage__title">Курстар онлайн өтеді</h2>
+          <div class="advantage__description">
+            <ul>
+              <li>Курсты <b>кез-келген уақытта</b> оқы</li>
+              <li>Саған тек <b>телефон немесе ноутбук</b> керек</li>
+              <li>Оқып, мамандык алып, <b>бүгіннен бастап</b> табысты тап</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="advantage blue second">
+        <div class="advantage__text">
+          <h2 class="advantage__title">Кураторлар әрқашан көмек көрсететін болады</h2>
+          <div class="advantage__description">
+            Әр курстың өз кураторы бар. Сұрақ қойып, тапсырмаларды <b>WhatsApp, Telegram</b> арқылы жібер, кері байланыс
+            ал.
+          </div>
+        </div>
+        <div class="advantage__image phones">
+          <img src="{% static 'img/mainkz/phones.jpg' %}" alt="Advantage">
+        </div>
+      </div>
+      <div class="advantage green third">
+        <div class="advantage__image">
+          <img src="{% static 'img/mainkz/Сертификат 1.png' %}" alt="Advantage">
+        </div>
+        <div class="advantage__text">
+          <h2 class="advantage__title">Курсты аяқтағаннан кейін сіз аласыз</h2>
+          <div class="advantage__description">
+            <ul>
+              <li>Курсты өту бойынша <b>сертификат</b></li>
+              <li>Мықты әрі білімді <b>орта</b></li>
+              <li><b>Кепілдендірілген</b> нәтиже</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="advantage">
+        <div class="advantage__text">
+          <h2 class="advantage__title">Қазақ тіліндегі алғашқы онлайн платформа</h2>
+          <div class="advantage__description">
+            Платформадағы барлық курстар <b>қазақ тілінде</b> жүргізіледі.
+          </div>
+        </div>
+        <div class="advantage__image">
+          <img src="{% static 'img/mainkz/Rectangle 31.png' %}" alt="Advantage">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="FAQ">
+  <div class="container">
+    <div class="title">Ответы на часто задаваемые вопросы</div>
+
+    <div class="tabs">
+      <div class="tab">
+        <input id="tab-one" type="checkbox" name="tabs">
+        <label for="tab-one">Kaspi Gold арқылы төлем жасай аламын ба?</label>
+        <div class="tab-content">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis
+            nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum
+            adipisci eum? Saepe, itaque.</p>
+        </div>
+      </div>
+      <div class="tab">
+        <input id="tab-two" type="checkbox" name="tabs">
+        <label for="tab-two">Курсты қалай сатып аламын?</label>
+        <div class="tab-content">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis
+            nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum
+            adipisci eum? Saepe, itaque.</p>
+        </div>
+      </div>
+      <div class="tab">
+        <input id="tab-three" type="checkbox" name="tabs">
+        <label for="tab-three">Барлық курстарда кураторлар бола ма?</label>
+        <div class="tab-content">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis
+            nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum
+            adipisci eum? Saepe, itaque.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+{% endblock %}

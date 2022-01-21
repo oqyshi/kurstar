@@ -1,0 +1,564 @@
+{% extends "kurstar/landings/base.html" %}
+{% load static %}
+{% block content %}
+<section class="start" style="background-image: url('/static/img/python3/bg.svg');">
+  <div class="container" >
+    <div class="offer">
+      <div class="offer-left">
+        <h1 class="offer-left_h1">
+          Хочешь стать
+          <br>
+          Python-разработчиком?
+        </h1>
+        <p class="offer-left_p">Со средней заработной платой от 480 000 тг</p>
+        <!--        <form action="{% url 'kurstar:course_detail' 5 %}" class="inline">-->
+        <!--          <button class="offer-left_button">-->
+        <!--            <p>Пройти курс</p>-->
+        <!--          </button>-->
+        <!--        </form>-->
+        <button class="offer-left_button" onclick='modal("myModal")'>
+          <p>ЗАПИСАТЬСЯ НА КУРС</p>
+        </button>
+      </div>
+      <div class="offer-right">
+        <img class="offer-right_img1" src="{% static 'img/landings/ru__discount.svg' %}" alt="">
+
+        <img class="offer-right_img" src="{% static 'img/python3/headerimg.png' %}" alt="">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="record">
+  <div class="container container-menos">
+    <h2 class="title">Запишитесь на курс</h2>
+
+    <form class="record__content" method="POST" action="{% url 'kurstar:callme' %}">
+      {% csrf_token %}
+      <div class="record__forms">
+
+        <input placeholder="Имя" class="record__input input" type="text" name="name" required>
+        <input placeholder="Телефон" class="record__input input" type="text" name="number" required>
+        <input placeholder="E-mail" class="record__input input" type="email" name="email" required>
+        <input style='visibility: hidden;' type="textarea" name="comment" value="С лэндинга Python3 1">
+        <div class="record__checkbox checkbox"><input type="checkbox" onclick="check()" required>
+          <p>Я соглашаюсь на обработку персональных данных</p>
+        </div>
+      </div>
+      <button class="btn" type="submit">ЗАПИСАТЬСЯ НА КУРС</button>
+
+    </form>
+
+  </div>
+</section>
+
+<section class="for">
+  <div class="container container-menos">
+    <h2 class="title">Python - разработчик</h2>
+    <div class="description">
+      <p>
+        Python — один из самых <b>популярных языков программирования.</b> На нём
+        <br>
+        разрабатывают искусственный интеллект, веб-сайты, игры. Этот язык
+        <br>
+        простой для начинающих. Python используют в <b>Google, Yandex, Dropbox.</b>
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="for">
+  <div class="container container-menos">
+    <h2 class="title">Вакансии с hh.kz</h2>
+    <div class="description">
+      <img src="{% static 'img/python3/salaries.svg' %}" alt="" width="100%" height="auto">
+    </div>
+  </div>
+</section>
+
+<section class="for">
+  <div class="container container-menos">
+    <h2 class="title">Вакансии с hh.kz</h2>
+    <div class="description">
+      <img src="{% static 'img/python3/hh-offer-1.svg' %}" alt="" width="100%" height="auto">
+      <img src="{% static 'img/python3/hh-offer-2.svg' %}" alt="" width="100%" height="auto">
+    </div>
+  </div>
+</section>
+
+<!--<section class="for">-->
+<!--  <div class="container">-->
+<!--    <div class="offer">-->
+<!--      <div class="offer-right" style="margin-left:20px;">-->
+<!--        <div class="offer">-->
+<!--          <div>-->
+<!--            <h2 style="font-weight: 600;font-size: 72px;line-height: 72px;color: #FD5C63;">-->
+<!--              500-->
+<!--            </h2>-->
+<!--            <p style="font-weight: normal;font-size: 24px;line-height: 31px;color: #000000;">-->
+<!--              Аса компанияға-->
+<!--              <br>-->
+<!--              таргетолог керек-->
+<!--              <br>-->
+<!--              Бұл цифр өседі-->
+<!--            </p>-->
+<!--          </div>-->
+<!--          <div class="offer-right" style="margin-left:20px;">-->
+<!--            <h2 style="font-weight: 600;font-size: 72px;line-height: 72px;color: #FD5C63;">-->
+<!--              200 000 тг-->
+<!--            </h2>-->
+<!--            <p style="font-weight: normal;font-size: 24px;line-height: 31px;color: #000000;">-->
+<!--              Таргетологтар айлық-->
+<!--              <br>-->
+<!--              алады-->
+<!--            </p>-->
+<!--          </div>-->
+<!--        </div>-->
+
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+
+<!--</section>-->
+
+<section class="record">
+  <div class="container container-menos">
+    <h2 class="title">Запишитесь на курс</h2>
+
+    <form class="record__content" method="POST" action="{% url 'kurstar:callme' %}">
+      {% csrf_token %}
+      <div class="record__forms">
+
+        <input placeholder="Имя" class="record__input input" type="text" name="name" required>
+        <input placeholder="Телефон" class="record__input input" type="text" name="number" required>
+        <input placeholder="E-mail" class="record__input input" type="email" name="email" required>
+        <input style='visibility: hidden;' type="textarea" name="comment" value="С лэндинга Python3 2">
+        <div class="record__checkbox checkbox"><input type="checkbox" onclick="check()" required>
+          <p>Я соглашаюсь на обработку персональных данных</p>
+        </div>
+      </div>
+      <button class="btn" type="submit">ЗАПИСАТЬСЯ НА КУРС</button>
+    </form>
+
+  </div>
+</section>
+
+<section class="for">
+  <div class="container container-menos">
+    <h2 class="title">Курс для тех, кто хочет</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="{% static 'img/python3/for-1.svg' %}" alt="">
+        <p>
+          Освоить востребованную профессию
+        </p>
+        <div>
+          Python-разработчик - одна из самых <br>
+          <b>востребованных</b> профессий на рынке в
+          <br>
+          <b>2020 году.</b>
+        </div>
+      </div>
+      <div class="card">
+        <img src="{% static 'img/target/for-2.svg' %}" alt="">
+        <p>
+          Стать программистом не имея большего опыта
+        </p>
+        <div>
+          Курс подходит для новичков в разработке и объясняет базовык и неотъемлемые моменты работы разработчика
+        </div>
+      </div>
+      <div class="card">
+        <img src="{% static 'img/target/for-3.svg' %}" alt="">
+        <p>
+          Работать только на себя
+        </p>
+        <div>
+          У вас не будет начальников. Вы сможете работать когда хотите, и брать любые проекты.
+        </div>
+      </div>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <img src="{% static 'img/target/for-4.svg' %}" alt="">
+        <p>Не любит свою работу</p>
+        <div>
+          Оставь скучную должность, и попробуй себя в новой сфере.
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="{% static 'img/target/for-6.svg' %}" alt="">
+        <p>
+          Не знает кем хочет быть
+        </p>
+        <div>
+          Попробуй себя в необычной профессии не учась при этом несколько лет. Ты можешь стать Python-разработчиком за
+          несколько месяцев.
+        </div>
+      </div>
+      <div class="card">
+        <img src="{% static 'img/target/for-5.svg' %}" alt="">
+        <p>
+          Маркетологтар үшін
+        </p>
+        <div>
+          Веб-аналитикалық сервистармен достасып, жарнамалық кампанияларыңыздың нәтижелерін дұрыс бағалауды үйреніңіз
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="profit">
+  <div class="container container-menos">
+    <h2 class="title">Пройдя курс, ты ты сможешь</h2>
+    <div class="profit__cards">
+      <div class="container">
+        <div class="profit__card d-flex align-items-center">
+          <div class="course1-img"><img src="{% static 'img/landings/aw.svg' %}" alt=""></div>
+          <p>
+            Работать с переменными
+          </p>
+        </div>
+
+      </div>
+      <div class="container">
+        <div class="profit__card d-flex align-items-center">
+          <div class="course1-img"><img src="{% static 'img/landings/aw.svg' %}" alt=""></div>
+          <p>
+            Различать и использовать сложные типы данных
+          </p>
+        </div>
+
+      </div>
+      <div class="container">
+        <div class="profit__card d-flex align-items-center">
+          <div class="course1-img"><img src="{% static 'img/landings/aw.svg' %}" alt=""></div>
+          <p>
+            Применять базовые формулы и алгоритмы
+          </p>
+
+        </div>
+
+      </div>
+    </div>
+    <div class="profit__cards">
+      <div class="container">
+        <div class="profit__card d-flex align-items-center">
+          <div class="course1-img"><img src="{% static 'img/landings/aw.svg' %}" alt=""></div>
+          <p>
+            Использовать модули и объекты
+          </p>
+        </div>
+      </div>
+      <div class="container">
+        <div class="profit__card d-flex align-items-center">
+          <div class="course1-img"><img src="{% static 'img/landings/aw.svg' %}" alt=""></div>
+          <p>
+            Применять функции
+          </p>
+        </div>
+
+      </div>
+      <div class="container">
+        <div class="profit__card d-flex align-items-center">
+          <div class="course1-img"><img src="{% static 'img/landings/aw.svg' %}" alt=""></div>
+          <p>
+            Выбрать дальше направление и продолжить обучение
+          </p>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+</section>
+
+<section class="record">
+  <div class="container container-menos">
+    <h2 class="title">Запишитесь на курс</h2>
+
+    <form class="record__content" method="POST" action="{% url 'kurstar:callme' %}">
+      {% csrf_token %}
+      <div class="record__forms">
+
+        <input placeholder="Имя" class="record__input input" type="text" name="name" required>
+        <input placeholder="Телефон" class="record__input input" type="text" name="number" required>
+        <input placeholder="E-mail" class="record__input input" type="email" name="email" required>
+        <input style='visibility: hidden;' type="textarea" name="comment" value="С лэндинга Python3 3">
+        <div class="record__checkbox checkbox"><input type="checkbox" onclick="check()" required>
+          <p>Я соглашаюсь на обработку персональных данных</p>
+        </div>
+      </div>
+      <button class="btn" type="submit">ЗАПИСАТЬСЯ НА КУРС</button>
+    </form>
+
+  </div>
+</section>
+
+<section class="course2">
+  <div class="container container-menos">
+    <h2 class="title">Что ты изучаешь на курсе</h2>
+    <div class="curriculum-list">
+      <div class="d-flex curriculum-item align-items-center">
+        <div class="curriculum-item-number d-flex justify-content-center align-items-center">
+          <h2>1</h2>
+        </div>
+        <p> Установка Python и PyCharm</p>
+      </div>
+
+      <div class="d-flex curriculum-item align-items-center">
+        <div class="curriculum-item-number d-flex justify-content-center align-items-center">
+          <h2>2</h2>
+        </div>
+        <p>Типы данных</p>
+      </div>
+
+      <div class="d-flex curriculum-item align-items-center">
+        <div class="curriculum-item-number d-flex justify-content-center align-items-center">
+          <h2>3</h2>
+        </div>
+        <p>Условные операторы + тип данных bool</p>
+      </div>
+
+      <div class="d-flex curriculum-item align-items-center">
+        <div class="curriculum-item-number d-flex justify-content-center align-items-center">
+          <h2>4</h2>
+        </div>
+        <p>Что такое List и Tuple?</p>
+      </div>
+
+      <div class="d-flex curriculum-item align-items-center">
+        <div class="curriculum-item-number d-flex justify-content-center align-items-center">
+          <h2>5</h2>
+        </div>
+        <p>Что такое Set и Dict?</p>
+      </div>
+      <div class="d-flex curriculum-item align-items-center">
+        <div class="curriculum-item-number d-flex justify-content-center align-items-center">
+          <h2>6</h2>
+        </div>
+        <p>Что такое iterators и collections?</p>
+      </div>
+      <div class="d-flex curriculum-item align-items-center">
+        <div class="curriculum-item-number d-flex justify-content-center align-items-center">
+          <h2>7</h2>
+        </div>
+        <p>Циклы</p>
+      </div>
+      <div class="d-flex curriculum-item align-items-center">
+        <div class="curriculum-item-number d-flex justify-content-center align-items-center">
+          <h2>8</h2>
+        </div>
+        <p>Функции. Аргументы функции.</p>
+      </div>
+      <div class="d-flex curriculum-item align-items-center">
+        <div class="curriculum-item-number d-flex justify-content-center align-items-center">
+          <h2>9</h2>
+        </div>
+        <p>Функция как объект (анонимные функции)</p>
+      </div>
+      <div class="d-flex curriculum-item align-items-center">
+        <div class="curriculum-item-number d-flex justify-content-center align-items-center">
+          <h2>10</h2>
+        </div>
+        <p>Контейнеры</p>
+
+      </div>
+      <div class="d-flex curriculum-item align-items-center">
+        <div class="curriculum-item-number d-flex justify-content-center align-items-center">
+          <h2>11</h2>
+        </div>
+        <p>Import (работа с модулями)</p>
+
+      </div>
+      <div class="d-flex curriculum-item align-items-center">
+        <div class="curriculum-item-number d-flex justify-content-center align-items-center">
+          <h2>12</h2>
+        </div>
+        <p>ООП (Объектно-ориентированное программирование)</p>
+
+      </div>
+      <div class="d-flex curriculum-item align-items-center">
+        <div class="curriculum-item-number d-flex justify-content-center align-items-center">
+          <h2>13</h2>
+        </div>
+        <p>Полиморфизим и инициализация</p>
+
+      </div>
+      <div class="d-flex curriculum-item align-items-center">
+        <div class="curriculum-item-number d-flex justify-content-center align-items-center">
+          <h2>14</h2>
+        </div>
+        <p>Наследование</p>
+
+      </div>
+    </div>
+
+    <button class="course3__btn btn" onclick='modal("myModal")'><p>ЗАПИСАТЬСЯ НА КУРС</p></button>
+
+  </div>
+</section>
+
+<section class="course2">
+  <div class="container container-menos">
+    <h2 class="title">Мы даем вам</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="{% static 'img/mobilografia/for-7.svg' %}" alt="">
+        <p>30% теории и 70% практики</p>
+      </div>
+      <div class="card">
+        <img src="{% static 'img/mobilografia/for-8.svg' %}" alt="">
+        <p>Разбор домашнего задания</p>
+      </div>
+      <div class="card">
+        <img src="{% static 'img/mobilografia/for-9.svg' %}" alt="">
+        <p>Личное кураторство</p>
+      </div>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <img src="{% static 'img/mobilografia/for-10.svg' %}" alt="">
+        <p>Домашние задания</p>
+      </div>
+      <div class="card">
+        <img src="{% static 'img/mobilografia/for-11.svg' %}" alt="">
+        <p>Разбор реальных заказов</p>
+      </div>
+      <div class="card">
+        <img src="{% static 'img/mobilografia/for-12.svg' %}" alt="">
+        <p>Создание дипломной работы</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="course3  d-flex justify-content-center">
+  <div class="container">
+    <h2 class="title">Как проходит обучение</h2>
+    <div class="course3__cards cards">
+      <div class="course3__card card">
+        <div class="course3-img"><img src="{% static 'img/ieltskz/one.svg' %}" alt=""></div>
+        <p>Вы смотрите видео уроки</p>
+      </div>
+      <div class="course3__card card">
+        <div class="course3-img"><img src="{% static 'img/ieltskz/two.svg' %}" alt=""></div>
+        <p>Выполняете домашние задания</p>
+      </div>
+      <div class="course3__card card">
+        <div class="course3-img"><img src="{% static 'img/ieltskz/three.svg' %}" alt=""></div>
+        <p>Работаете с куратором</p>
+      </div>
+      <div class="course3__card card">
+        <div class="course3-img"><img src="{% static 'img/ieltskz/four.svg' %}" alt=""></div>
+        <p>Делаете дипломную работу</p>
+      </div>
+    </div>
+    <button class="course3__btn btn" onclick='modal("myModal")'><p>ЗАПИСАТЬСЯ НА КУРС</p></button>
+  </div>
+</section>
+
+<section class="course4">
+  <div class="container container-menos">
+    <div class="course4__content">
+      <h2 class="title">Диплом Kurstar</h2>
+      <div class="course4__card">
+        <img src="{% static 'img/landings/aw.svg' %}" alt="">
+        <p>
+          Подтверждает, что вы полностью прошли курс
+        </p>
+      </div>
+      <div class="course4__card">
+        <img src="{% static 'img/landings/aw.svg' %}" alt="">
+        <p>
+          Доказательство вашей экспертности
+        </p>
+      </div>
+      <div class="course4__card">
+        <img src="{% static 'img/landings/aw.svg' %}" alt="">
+        <p>
+          Помогает в трудоустройстве и стажировке
+        </p>
+      </div>
+    </div>
+    <img class="course4__image" src="{% static 'img/target/certificate.svg' %}" alt="">
+  </div>
+</section>
+
+<section class="course5">
+  <div class="container">
+    <h2 class="title">Цена курса</h2>
+    <div class="course5__content">
+      <div class="course5-content_left_rectangle d-flex flex-column justify-content-center align-items-center">
+        <div><h2>19 990 тг</h2></div>
+        <div><h3>40 000 тг</h3></div>
+        <h4>*3 күннің ішінде</h4>
+      </div>
+      <div class="course5__forms">
+        <h2>Запишитесь на курс</h2>
+        <form action="{% url 'kurstar:callme' %}" method="POST"
+              class="d-flex flex-column justify-content-center align-items-center">
+          {% csrf_token %}
+          <input placeholder="Имя" class="course5__input input" type="text" name="name" required>
+          <input placeholder="Телефон" class="course5__input input" type="text" name="number" required>
+          <input placeholder="E-mail" class="course5__input input" type="email" name="email" required>
+          <input style='visibility: hidden;' type="textarea" name="comment" value="С лэндинга Python3 4">
+          <div class="course5__checkbox checkbox"><input type="checkbox" onclick="check()" required>
+            <p>Я соглашаюсь на обработку персональных данных</p></div>
+          <button class="btn" type="submit"><p>ЗАПИСАТЬСЯ НА КУРС</p></button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="FAQ">
+  <div class="container container-menos">
+    <div class="title">
+      Часто задаваемые вопросы
+    </div>
+
+    <div class="tabs">
+      <div class="tab">
+        <input id="tab-one" type="checkbox" name="tabs">
+        <label for="tab-one">Могу ли я оплатить через Kaspi Gold?</label>
+        <div class="tab-content">
+          <p>...</p>
+        </div>
+      </div>
+      <div class="tab">
+        <input id="tab-two" type="checkbox" name="tabs">
+        <label for="tab-two">Для этого нужно уметь программировать?</label>
+        <div class="tab-content">
+          <p>...</p>
+        </div>
+      </div>
+      <div class="tab">
+        <input id="tab-three" type="checkbox" name="tabs">
+        <label for="tab-three">Для этого нужно уметь рисовать?</label>
+        <div class="tab-content">
+          <p>...</p>
+        </div>
+      </div>
+      <div class="tab">
+        <input id="tab-four" type="checkbox" name="tabs">
+        <label for="tab-four">Сколько мне нужно заниматься в день? </label>
+        <div class="tab-content">
+          <p>...</p>
+        </div>
+      </div>
+      <div class="tab">
+        <input id="tab-five" type="checkbox" name="tabs">
+        <label for="tab-five">У меня получится если я никогда не занимался веб-дизайном?</label>
+        <div class="tab-content">
+          <p>...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

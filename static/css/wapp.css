@@ -1,0 +1,122 @@
+.kurstar-wapp
+{
+    z-index: 10001;
+    display: block;
+    transition: opacity 500ms ease-in;
+    position: fixed;
+    bottom: 10px;
+    right: 20px;
+    opacity: 1;
+    overflow: visible;
+    padding: 0;
+    width:80px;
+    height:80px;
+
+}
+
+@media (max-width: 530px) {
+  	.kurstar-wapp
+    {
+        bottom: 20px;
+        right: 20px;
+        width:75px;
+        height:75px;
+    }
+}
+
+@keyframes .kurstar-wapp{
+    0% {
+        transfrom: rotate(-20deg);
+    }
+}
+
+.kurstar-pulse, .kurstar-bloc, .kurstar-phone {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    color: #fff;
+    text-align: center;
+    border-radius: 50%;
+}
+.kurstar-bloc {
+    cursor: pointer;
+    z-index: 1;
+    overflow: hidden;
+}
+.kurstar-pulse {
+
+    background: #28b080;
+    position: fixed;
+    bottom:20px;
+    right:20px;
+    transition: .5s;
+}
+.kurstar-phone {
+    font-size: 50px;
+    line-height: 94px;
+    animation: kurstar-phone .9s ease-in-out infinite;
+}
+.kurstar-text {
+    width : 100%;
+    position: absolute;
+    opacity: 0;
+    font-weight: 700;
+    top: 35px;
+    text-align: center;
+    font-size: 14px;
+    transform: scaleX(-1);
+    transition: .5s ease-in-out;
+}
+.kurstar-phone i {
+    transition: .5s ease-in-out;
+}
+.kurstar-pulse:hover {
+    background: ##29b541;;
+}
+.kurstar-pulse:hover i {
+    transition: .5s ease-in-out;
+    transform: scale(0);
+}
+.kurstar-pulse:hover .kurstar-text {
+    transform: scaleX(1);
+    transition: .5s ease-in-out;
+    opacity: 1;
+}
+.kurstar-pulse:hover::before,
+.kurstar-pulse:hover::after {
+    content: '';
+    position: absolute;
+    border: 1px solid #29b541;
+    left: -20px;
+    right: -20px;
+    top: -20px;
+    bottom: -20px;
+    border-radius: 50%;
+    animation: kurstar-pulse 1.8s linear infinite;
+    opacity: 0;
+}
+.kurstar-pulse:hover::after {
+    animation-delay: .5s;
+}
+
+@keyframes kurstar-phone {
+    0%, 100% {
+        transform: rotate(-20deg);
+    }
+    50% {
+        transform: rotate(21deg);
+    }
+}
+@keyframes kurstar-pulse {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.2);
+        opacity: 0;
+    }
+}

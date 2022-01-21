@@ -1,0 +1,23 @@
+{% extends "account/base.html" %}
+
+{% load i18n %}
+
+{% block title %}{% trans "Сіздің E-mail-ды растаңыз" %}{% endblock %}
+
+{% block content %}
+<div class="container-menos">
+  <h1>{% trans "Сіздің E-mail-ды растаңыз" %}</h1>
+
+  {% url 'account_email' as email_url %}
+
+  <p>{% blocktrans %}Сайттың бұл бөлігі сізден өзіңіз үшін берген адам екеніңізді растауды талап етеді. Ол үшін біз
+    сіздің электрондық поштаңызға меншік құқығын растауды талап етеміз.{% endblocktrans %}</p>
+
+  <p>{% blocktrans %}Біз сізге растау үшін электрондық хат жібердік. Осы Электрондық поштаның ішіндегі сілтемені
+    басыңыз. Егер сіз оны бірнеше минут ішінде алмасаңыз, бізге хабарласыңыз.{% endblocktrans %}</p>
+
+  <p>{% blocktrans %}<strong>Ескерту:</strong> электрондық пошта мекенжайын <a href="{{ email_url }}"> әлі де өзгерте
+    аласыз</a>.{% endblocktrans %}</p>
+
+</div>
+{% endblock %}

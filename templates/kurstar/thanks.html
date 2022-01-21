@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+{% block content %}
+<div class="container d-flex flex-column justify-content-center align-items-center">
+  <h2 style="font-family: Montserrat;
+font-style: normal;
+font-weight: 600;
+font-size: 60px;
+line-height: 82px;
+/* or 102% */
+color: #FD5C63;
+opacity: 0.3;">KURSTAR</h2>
+
+  <h1 style="font-family: Montserrat;
+font-style: normal;
+font-weight: 600;
+font-size: 48px;
+line-height: 60px;
+text-align:center;
+
+
+color: #000000;">{% trans 'Cіз қалдырған өтінішіңіз үшін рахмет' %}</h1>
+  <a href="/" class="btn d-flex flex-column justify-content-center align-items-center">{% trans 'БАСТЫ' %}</a>
+  </div>
+  <br><br><br>
+
+
+{% endblock %}

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+{% load static %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+<html lang="{{LANGUAGE_CODE}}">
+<head>
+  <link rel="shortcut icon" type="image/png" href="{% static 'img/common/logo.png' %}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+        content="Kurstar.kz - {% trans 'Сұранысқа ие мамандықтар курстарының Онлайн платформасы біз СММ, Бизнес, Маркетинг, бағдарламалау, Дизайн, ағылшын тілі салаларындағы сұранысқа ие интернет-мамандықтарға оқытамыз. Бөлім бол Kurstar.kz. бүгін ақша табуды бастаңыз !!!' %}">
+  <meta name="keywords"
+        content="{% trans 'курстар, СММ, онлайн курстар, бизнес жасау, маркетинг, бағдарламалау, дизайн, ағылшын тілі' %}">
+  <title>{% block title %}{% endblock %} | {% trans 'Kurstar.kz - онлайн курстар платформасы' %}</title>
+
+  <link rel="stylesheet" type="text/css" href="{% static 'css/mainkz.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/popup.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/wapp.css' %}">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap">
+
+
+  <script type="text/javascript" src="https://www.youtube.com/player_api"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- Facebook Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '589408278396337');
+    fbq('track', 'PageView');
+
+
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+         src="https://www.facebook.com/tr?id=589408278396337&ev=PageView&noscript=1"/>
+  </noscript>
+  <!-- End Facebook Pixel Code -->
+</head>
+
+<body>
+<header id="header">
+  <div class="container">
+    <a class="header__logo" href="/">
+      <img src="{% static 'img/header/kurstar_header.svg' %}" alt="Логотип Курстар" class="Логотип Курстар">
+    </a>
+    <div class="navigation">
+      <nav class="header__nav d-flex align-items-center" id="navbar" onclick="toggleNavbar()">
+        <ul class="d-flex align-items-center">
+          <li><a href="/">{% trans 'Басты' %}</a></li>
+          <li><a href="#courses">{% trans 'Курстар' %}</a></li>
+          <li><a href="{% url 'kurstar:about' %}">{% trans 'Байланыс' %}</a></li>
+          <li>
+            <form action="{% url 'set_language' %}" method="post">
+              {% csrf_token %}
+              <input name="next" type="hidden" value="{{ redirect_to }}">
+              <input name="language" type="hidden" value="kk">
+              <button type="submit" class="language-change">Қазақша</button>
+            </form>
+          </li>
+          <li>
+            <form action="{% url 'set_language' %}" method="post">
+              {% csrf_token %}
+              <input name="next" type="hidden" value="{{ redirect_to }}">
+              <input name="language" type="hidden" value="ru">
+              <button type="submit" class="language-change">Русский</button>
+            </form>
+          </li>
+          <!--          <li>-->
+          <!--            <p>-->
+          <!--            <form action="{% url 'set_language' %}" method="post">{% csrf_token %}-->
+          <!--              <input name="next" type="hidden" value="{{ redirect_to }}">-->
+          <!--              <select name="language" onchange="this.form.submit()" class="language-change">-->
+          <!--                {% get_available_languages as LANGUAGES %}-->
+          <!--                {% get_language_info_list for LANGUAGES as languages %}-->
+          <!--                {% get_current_language as LANGUAGE_CODE %}-->
+          <!--                {% for language in languages %}-->
+          <!--                <option value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %} selected {% endif %}-->
+          <!--                        style="justify-content:center;text-align:center;">-->
+          <!--                  {{ language.name_local }} ({{ language.code }})-->
+          <!--                </option>-->
+          <!--                {% endfor %}-->
+          <!--              </select>-->
+          <!--            </form>-->
+          <!--            </p>-->
+          <!--          </li>-->
+        </ul>
+      </nav>
+
+      {% if user.is_authenticated %}
+
+
+      <div class="header__links">
+        <a href="{% url 'kurstar:mycourses' %}">{% trans 'Менің курстарым' %}</a>
+        <a href="{% url 'account_logout' %}">{% trans 'Шығу' %}</a>
+      </div>
+
+      {% else %}
+      <div class="header__links">
+        <a href="{% url 'account_signup' %}">{% trans 'Тіркелу' %}</a>
+        <a href="{% url 'account_login' %}">{% trans 'Кіру' %}</a>
+      </div>
+      {% endif %}
+
+
+    </div>
+    <div class="header__menu" onclick="toggleNavbar()">
+      <div class="header__burger"></div>
+    </div>
+  </div>
+</header>
+
+{% block content %}
+{% endblock %}
+
+<!-- FOOTER-->
+
+<footer id="footer">
+  <!--  <div class="container-menos d-flex justify-content-around">-->
+
+  <!--    <div class="col-6">-->
+  <!--      <a class="header_social-item d-flex justify-content-center align-items-center"-->
+  <!--         href="https://www.instagram.com/oqyshi/" target="_blank">-->
+
+  <!--        <div style="line-height: 50px;min-width: 100px;color:">{% trans 'Бас программист:' %}</div>-->
+
+  <!--        <div class="instagram-gray d-flex align-items-center">-->
+  <!--          <i class="fab fa-instagram" style="margin-right:2px;"></i>-->
+  <!--          <p>oqyshi</p>-->
+  <!--        </div>-->
+  <!--      </a>-->
+  <!--    </div>-->
+
+  <!--    <div class="col-6">-->
+  <!--      <a class="header_social-item d-flex justify-content-center align-items-center"-->
+  <!--         href="https://www.instagram.com/zhum_aisha/" target="_blank">-->
+  <!--        <div style="line-height: 50px; min-width: 100px;">{% trans 'Бас дизайнер:' %}</div>-->
+  <!--        <div class="instagram-gray d-flex align-items-center">-->
+  <!--          <i class="fab fa-instagram" style="margin-right:2px;"></i>-->
+  <!--          zhum_aisha-->
+  <!--        </div>-->
+  <!--      </a>-->
+  <!--    </div>-->
+
+  <!--  </div>-->
+
+
+  <div class="container-menos container">
+    <div class="footer__company">
+      <p>&#169; 2010-2020 Kurstar.kz {% trans 'ЖШС' %} «БС»</p>
+      <p> {% trans 'Жауапкершілігі шектеулі серіктестік «Бизнес Қауымдастық» <br> Юридический адрес: Республика Казахстан, г. Алматы, Байзакова 280' %}</p>
+    </div>
+    <div class="footer__subscribe">
+
+      <p>{% trans 'Kurstar.kz туралы әлеуметтік <br>желілерде көбірек біліңіз:' %}</p>
+      <div class="footer__social">
+        <!--        <a class="header_social-item" href="#"> <i class="fab fa-facebook-f"></i></a>-->
+        <a class="header_social-item" href="https://www.youtube.com/channel/UCREp21CsQew8VNpy5E-1oyg"><i
+                class="fab fa-youtube"></i></a>
+        <!--        <a class="header_social-item" href="#"><i class="fab fa-telegram"></i></a>-->
+        <a class="header_social-item" href="https://www.instagram.com/kurstar.kz/" target="_blank">
+          <i class="fab fa-instagram"></i>
+        </a>
+
+        <a class="header_social-item"
+           href="https://api.whatsapp.com/send?phone=77058315777&text=%D0%A1%D3%99%D0%BB%D0%B5%D0%BC%D0%B5%D1%82%D1%81%D1%96%D0%B7%20%D0%B1%D0%B5%2C%20%D0%BC%D0%B5%D0%BD%20%D0%BA%D1%83%D1%80%D1%81%D1%82%D0%B0%D1%80%20%D0%B1%D0%BE%D0%B9%D1%8B%D0%BD%D1%88%D0%B0%20%D0%BA%D0%B5%D2%A3%D0%B5%D1%81%20%D0%B0%D0%BB%D2%93%D1%8B%D0%BC%20%D0%BA%D0%B5%D0%BB%D0%B5%D0%B4%D1%96">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </div>
+    </div>
+    <div class="footer__phones">
+      <ul>
+<!--        <li>-->
+<!--          <a href="https://api.whatsapp.com/send?phone=77058315777&text=%D0%A1%D3%99%D0%BB%D0%B5%D0%BC%D0%B5%D1%82%D1%81%D1%96%D0%B7%20%D0%B1%D0%B5%2C%20%D0%BC%D0%B5%D0%BD%20%D0%BA%D1%83%D1%80%D1%81%D1%82%D0%B0%D1%80%20%D0%B1%D0%BE%D0%B9%D1%8B%D0%BD%D1%88%D0%B0%20%D0%BA%D0%B5%D2%A3%D0%B5%D1%81%20%D0%B0%D0%BB%D2%93%D1%8B%D0%BC%20%D0%BA%D0%B5%D0%BB%D0%B5%D0%B4%D1%96">-->
+<!--            +7 (707) 323 1209</a></li>-->
+        <li>
+          <a href="https://api.whatsapp.com/send?phone=77073433031&text=%D0%A1%D3%99%D0%BB%D0%B5%D0%BC%D0%B5%D1%82%D1%81%D1%96%D0%B7%20%D0%B1%D0%B5%2C%20%D0%BC%D0%B5%D0%BD%20%D0%BA%D1%83%D1%80%D1%81%D1%82%D0%B0%D1%80%20%D0%B1%D0%BE%D0%B9%D1%8B%D0%BD%D1%88%D0%B0%20%D0%BA%D0%B5%D2%A3%D0%B5%D1%81%20%D0%B0%D0%BB%D2%93%D1%8B%D0%BC%20%D0%BA%D0%B5%D0%BB%D0%B5%D0%B4%D1%96">
+            +7 (707) 343 3031</a></li>
+        <li>
+          <a href="https://api.whatsapp.com/send?phone=77058315777&text=%D0%A1%D3%99%D0%BB%D0%B5%D0%BC%D0%B5%D1%82%D1%81%D1%96%D0%B7%20%D0%B1%D0%B5%2C%20%D0%BC%D0%B5%D0%BD%20%D0%BA%D1%83%D1%80%D1%81%D1%82%D0%B0%D1%80%20%D0%B1%D0%BE%D0%B9%D1%8B%D0%BD%D1%88%D0%B0%20%D0%BA%D0%B5%D2%A3%D0%B5%D1%81%20%D0%B0%D0%BB%D2%93%D1%8B%D0%BC%20%D0%BA%D0%B5%D0%BB%D0%B5%D0%B4%D1%96">
+            +7 (705) 831 5777</a></li>
+
+      </ul>
+    </div>
+    <div class="footer__bottom">
+      <div class="footer__logo">
+        <img src="{% static 'img/mainkz/KURSTAR_footer.png' %}" alt="Логотип Курстар 2" title="Логотип Курстар 2">
+      </div>
+
+    </div>
+  </div>
+</footer>
+
+<wrapper>
+  <a href="https://api.whatsapp.com/send?phone=77058315777&text=%D0%A1%D3%99%D0%BB%D0%B5%D0%BC%D0%B5%D1%82%D1%81%D1%96%D0%B7%20%D0%B1%D0%B5%2C%20%D0%BC%D0%B5%D0%BD%20%D0%BA%D1%83%D1%80%D1%81%D1%82%D0%B0%D1%80%20%D0%B1%D0%BE%D0%B9%D1%8B%D0%BD%D1%88%D0%B0%20%D0%BA%D0%B5%D2%A3%D0%B5%D1%81%20%D0%B0%D0%BB%D2%93%D1%8B%D0%BC%20%D0%BA%D0%B5%D0%BB%D0%B5%D0%B4%D1%96"
+     class="kurstar-dws">
+    <div class="kurstar-pulse">
+      <div class="kurstar-bloc"></div>
+      <div class="kurstar-phone"><i class="fab fa-whatsapp" aria-hidden="true"></i></div>
+      <div class="kurstar-text">{% trans 'ЖАЗУ' %}</div>
+    </div>
+  </a>
+</wrapper>
+
+
+<script type="text/javascript" src="{% static 'js/popup.js' %}"></script>
+<script>
+	function toggleNavbar() {document.getElementById("header").classList.toggle("open")}
+
+
+</script>
+</body>
+</html>

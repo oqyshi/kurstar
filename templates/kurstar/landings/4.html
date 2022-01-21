@@ -1,0 +1,453 @@
+{% extends "kurstar/landings/base.html" %}
+{% load static %}
+{% block content %}
+<section class="start">
+  <div class="container">
+    <div class="offer">
+      <div class="offer-left">
+        <h1 class="offer-left_h1">
+          ТАРГЕТ жарнамасы
+          <br>
+          бойынша курс
+        </h1>
+        <p class="offer-left_p">Кез келген нишадағы компанияла <br>үшін сұранысқа ие маман болыңыз</p>
+        <!--        <form action="{% url 'kurstar:course_detail' 4 %}" class="inline">-->
+        <!--          <button class="offer-left_button">-->
+        <!--            <p>Курсты өту</p>-->
+        <!--          </button>-->
+        <!--        </form>-->
+        <button class="offer-left_button" onclick='modal("myModal")'>
+          <p>КУРСТЫ ӨТУ</p>
+        </button>
+      </div>
+      <div class="offer-right">
+        <img class="offer-right_img1" src="{% static 'img/landings/kz__discount.svg' %}" alt="">
+
+        <img class="offer-right_img" src="{% static 'img/target/headerimg.png' %}" alt="">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="for" style="margin-top:40px;">
+  <div class="container container-menos">
+    <div class="description">
+      <img src="{% static 'img/target/salaries.svg' %}" alt="" width="100%" height="auto">
+    </div>
+  </div>
+</section>
+
+<section class="for">
+  <div class="container container-menos">
+    <h2 class="title">Бұл курс кімдер үшін:</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="{% static 'img/target/for-1.svg' %}" alt="">
+        <p>
+          Сұранысқа ие мамандық игергісі келетіндер үшін
+        </p>
+        <div>
+          Сіз өзіңізге жаңа мамандық иесі бола отырып, курстан кейін бірден 200 000 және одан жоғары табыс таба аласыз
+        </div>
+      </div>
+      <div class="card">
+        <img src="{% static 'img/target/for-6.svg' %}" alt="">
+        <p>
+          Бастаушы таргетологтар үшін
+        </p>
+        <div>
+          Реклама жіберген кезде артық ақша жоғалтқысы келмейтін жас мамандар үшін
+        </div>
+      </div>
+      <div class="card">
+        <img src="{% static 'img/target/for-5.svg' %}" alt="">
+        <p>
+          Тек өзіне жұмыс істегісі келетіндер үшін
+        </p>
+        <div>
+          Үй, коворкинг, кафе, көлдің жағасында отырып фрилансер болып жұмыс жасағысы келетіндер үшін.
+        </div>
+      </div>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <img src="{% static 'img/target/for-4.svg' %}" alt="">
+        <p>Кәсіпкерлер үшін</p>
+        <div>
+          Сіз өзіңіз-ақ әлеуметтік желілерде жарнама қалай жұмыс жасайтынын түсініп, ары қарай алған біліміңізді өз
+          кәсібіңізде қолдана аласыз
+        </div>
+      </div>
+      <div class="card">
+        <img src="{% static 'img/target/for-2.svg' %}" alt="">
+        <p>
+          Маркетологтар үшін
+        </p>
+        <div>
+          Веб-аналитикалық сервистармен достасып, жарнамалық кампанияларыңыздың нәтижелерін дұрыс бағалауды үйреніңіз
+        </div>
+      </div>
+      <div class="card">
+        <img src="{% static 'img/target/for-3.svg' %}" alt="">
+        <p>
+          Өзін және өз кәсібін жарнама еткісі келетіндер үшін
+        </p>
+        <div>
+          SMM мамандары, маркетолог, таргетолог, кәсіп иелері, басқарушылар және фрилансерлер үшін
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="record">
+  <div class="container container-menos">
+    <h2 class="title">Курсқа жазылыңыздар</h2>
+
+    <form class="record__content" method="POST" action="{% url 'kurstar:callme' %}">
+      {% csrf_token %}
+      <div class="record__forms">
+
+        <input placeholder="Аты-жөніңіз" class="record__input input" type="text" name="name" required>
+        <input placeholder="Телефон" class="record__input input" type="text" name="number" required>
+        <input placeholder="E-mail" class="record__input input" type="email" name="email" required>
+        <input style='visibility: hidden;' type="textarea" name="comment" value="С лэндинга Таргет 1">
+        <div class="record__checkbox checkbox"><input type="checkbox" onclick="check()" required>
+          <p>Мен өзімнің жеке ақпараттарымды өңдеуге рұқсат беремін</p>
+        </div>
+      </div>
+      <button class="btn" type="submit">КУРСҚА ЖАЗЫЛУ</button>
+    </form>
+
+  </div>
+</section>
+
+<!--<section class="for">-->
+<!--  <div class="container">-->
+<!--    <div class="offer">-->
+
+
+<!--      <div class="description">-->
+<!--        <h2 class="title">Таргетинг неге актуально?</h2>-->
+<!--        <p style="font-weight: normal;font-size: 24px;line-height: 29px;color: #000000;">-->
+<!--          Қазір клиенттер үшін нағыз соғыс жүріп-->
+<!--          <br>-->
+<!--          жатыр. Клиенттерсіз кез келген бизнес өледі.-->
+<!--          <br>-->
+<!--          Компаниядағы ең құнды адам - клиент алып-->
+<!--          <br>-->
+<!--          келуші адам. Басқа сөздермен компанияларға-->
+<!--          <br>-->
+<!--          қазір таргетологтар керек, өйткені олар-->
+<!--          <br>-->
+<!--          компанияларға клиенттерді әкеледі-->
+<!--        </p>-->
+<!--      </div>-->
+<!--      <div class="offer-right" style="margin-left:20px;">-->
+<!--        <div class="offer">-->
+<!--          <div>-->
+<!--            <h2 style="font-weight: 600;font-size: 72px;line-height: 72px;color: #FD5C63;">-->
+<!--              500-->
+<!--            </h2>-->
+<!--            <p style="font-weight: normal;font-size: 24px;line-height: 31px;color: #000000;">-->
+<!--              Аса компанияға-->
+<!--              <br>-->
+<!--              таргетолог керек-->
+<!--              <br>-->
+<!--              Бұл цифр өседі-->
+<!--            </p>-->
+<!--          </div>-->
+<!--          <div class="offer-right" style="margin-left:20px;">-->
+<!--            <h2 style="font-weight: 600;font-size: 72px;line-height: 72px;color: #FD5C63;">-->
+<!--              200 000 тг-->
+<!--            </h2>-->
+<!--            <p style="font-weight: normal;font-size: 24px;line-height: 31px;color: #000000;">-->
+<!--              Таргетологтар айлық-->
+<!--              <br>-->
+<!--              алады-->
+<!--            </p>-->
+<!--          </div>-->
+<!--        </div>-->
+
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+
+<!--</section>-->
+
+
+<section class="profit">
+  <div class="container container-menos">
+    <h2 class="title">Курсты өтіп, сіз</h2>
+    <div class="profit__cards">
+      <div class="container">
+        <div class="profit__card">
+          <div class="course1-img"><img src="{% static 'img/landings/aw.svg' %}" alt=""></div>
+          <p>
+            Таргет туралы толық түсінік аласыздар
+          </p>
+        </div>
+
+      </div>
+      <div class="container">
+        <div class="profit__card">
+          <div class="course1-img"><img src="{% static 'img/landings/aw.svg' %}" alt=""></div>
+          <p>
+            Таргетингке керек приложениялар туралы білетін боласыздар
+          </p>
+        </div>
+
+      </div>
+      <div class="container">
+        <div class="profit__card">
+          <div class="course1-img"><img src="{% static 'img/landings/aw.svg' %}" alt=""></div>
+          <p>
+            Геотаргетинг дұрыс таңдауды үйренесіз
+          </p>
+
+        </div>
+
+      </div>
+    </div>
+    <div class="profit__cards">
+      <div class="container">
+        <div class="profit__card">
+          <div class="course1-img"><img src="{% static 'img/landings/aw.svg' %}" alt=""></div>
+          <p>
+            Генерация лидов туралы толық түсінік аласыздар
+          </p>
+        </div>
+      </div>
+      <div class="container">
+        <div class="profit__card">
+          <div class="course1-img"><img src="{% static 'img/landings/aw.svg' %}" alt=""></div>
+          <p>
+            Реклама нәтижесін қалай көреміз туралы білесіздер
+          </p>
+        </div>
+
+      </div>
+      <div class="container">
+        <div class="profit__card">
+          <div class="course1-img"><img src="{% static 'img/landings/aw.svg' %}" alt=""></div>
+          <p>
+            Excel форма таргетке калай дұрыс қолдануға білесіздер
+          </p>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+</section>
+
+<section class="course2">
+  <div class="container container-menos">
+    <h2 class="title">Біз сізге не береміз?</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="{% static 'img/mobilografia/for-7.svg' %}" alt="">
+        <p>30% теория және 70% практика</p>
+      </div>
+      <div class="card">
+        <img src="{% static 'img/mobilografia/for-8.svg' %}" alt="">
+        <p>Үй тапсырмасын талдаын береміз</p>
+      </div>
+      <div class="card">
+        <img src="{% static 'img/mobilografia/for-9.svg' %}" alt="">
+        <p>Жеке куратор</p>
+      </div>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <img src="{% static 'img/mobilografia/for-10.svg' %}" alt="">
+        <p>Үй жұмысы</p>
+      </div>
+      <div class="card">
+        <img src="{% static 'img/mobilografia/for-11.svg' %}" alt="">
+        <p>Шынайы тапсырыстарды талдау</p>
+      </div>
+      <div class="card">
+        <img src="{% static 'img/mobilografia/for-12.svg' %}" alt="">
+        <p>Дипломды жұмысыңызды бастайсыз</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="record">
+  <div class="container container-menos">
+    <h2 class="title">Курсқа жазылыңыздар</h2>
+
+    <form class="record__content" method="POST" action="{% url 'kurstar:callme' %}">
+      {% csrf_token %}
+      <div class="record__forms">
+
+        <input placeholder="Аты-жөніңіз" class="record__input input" type="text" name="name" required>
+        <input placeholder="Телефон" class="record__input input" type="text" name="number" required>
+        <input placeholder="E-mail" class="record__input input" type="email" name="email" required>
+        <input style='visibility: hidden;' type="textarea" name="comment" value="С лэндинга Таргет 2">
+        <div class="record__checkbox checkbox"><input type="checkbox" onclick="check()" required>
+          <p>Мен өзімнің жеке ақпараттарымды өңдеуге рұқсат беремін</p>
+        </div>
+      </div>
+      <button class="btn" type="submit">КУРСҚА ЖАЗЫЛУ</button>
+    </form>
+
+  </div>
+</section>
+
+<section class="course3 d-flex justify-content-center">
+  <div class="container">
+    <h2 class="title">Сабақтар қалай өтетін болады:</h2>
+    <div class="course3__cards cards">
+      <div class="course3__card card">
+        <div class="course3-img"><img src="{% static 'img/ieltskz/one.svg' %}" alt=""></div>
+        <p>Видео сабақтарды қарап өтесіздер</p>
+      </div>
+      <div class="course3__card card">
+        <div class="course3-img"><img src="{% static 'img/ieltskz/two.svg' %}" alt=""></div>
+        <p>Үй жұмысын орындайыздар</p>
+      </div>
+      <div class="course3__card card">
+        <div class="course3-img"><img src="{% static 'img/ieltskz/three.svg' %}" alt=""></div>
+        <p>Куратормен жұмыс істейсіздер</p>
+      </div>
+      <div class="course3__card card">
+        <div class="course3-img"><img src="{% static 'img/ieltskz/four.svg' %}" alt=""></div>
+        <p>Дипломдық жумысты жасайсыз</p>
+      </div>
+    </div>
+    <button class="course3__btn btn" onclick='modal("myModal")'><p>КУРСҚА ЖАЗЫЛУ</p></button>
+  </div>
+</section>
+
+<section id="teachers">
+  <div class="container">
+    <div class="teacher red">
+      <div class="teacher__description">
+        <h2>Нурбек</h2>
+        <h3>Таргет курсын құраушы</h3>
+        <p> Өмірімде жақсы өзгерістер бола бастады. Өз бизнесімнің алға дамуына жол аштым</p>
+        <ul>
+          <li>30 аса бизнес проект жүргіздім</li>
+          <li>Жеке бизнесім свадебный салон: @Kyzarmany</li>
+          <li>Таргетингті @petruchjo @target_school үйрендім</li>
+        </ul>
+        <button class="teacher__more btn" onclick='modal("myModal")'>КУРСҚА ЖАЗЫЛУ</button>
+      </div>
+      <div class="teachers__photo">
+        <img src="{% static 'img/target/teacher.svg' %}" alt="3">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="course4">
+  <div class="container container-menos">
+    <div class="course4__content">
+      <h2 class="title">Кurstar дипломы </h2>
+      <div class="course4__card">
+        <img src="{% static 'img/landings/aw.svg' %}" alt="">
+        <p>
+          Сіз курсыңызды аяғына дейін
+          <br>
+          бітіргенін дәлелдейді
+        </p>
+      </div>
+      <div class="course4__card">
+        <img src="{% static 'img/landings/aw.svg' %}" alt="">
+        <p>
+          Өз мамандығыңыздың шебері
+          <br>
+          екендігіңізді дәлелдейді
+        </p>
+      </div>
+      <div class="course4__card">
+        <img src="{% static 'img/landings/aw.svg' %}" alt="">
+        <p>
+          Жұмысқа тұруға және
+          <br>
+          стажировкаға көмектеседі
+        </p>
+      </div>
+    </div>
+    <img class="course4__image" src="{% static 'img/target/certificate.svg' %}" alt="">
+  </div>
+</section>
+
+<section class="course5">
+  <div class="container">
+    <h2 class="title">Курстың бағасы</h2>
+    <div class="course5__content">
+      <div class="course5-content_left_rectangle d-flex flex-column justify-content-center align-items-center">
+        <div><h2>5 000 тг</h2></div>
+        <div><h3>40 000 тг</h3></div>
+        <h4>*3 күннің ішінде</h4>
+      </div>
+      <div class="course5__forms">
+        <h2>Курсқа жазыл</h2>
+        <form action="{% url 'kurstar:callme' %}" method="POST"
+              class="d-flex flex-column justify-content-center align-items-center">
+          {% csrf_token %}
+          <input placeholder="Аты-жөніңіз" class="course5__input input" type="text" name="name" required>
+          <input placeholder="Телефон" class="course5__input input" type="text" name="number" required>
+          <input placeholder="E-mail" class="course5__input input" type="email" name="email" required>
+          <input style='visibility: hidden;' type="textarea" name="comment" value="С лэндинга Таргет 3">
+          <div class="course5__checkbox checkbox"><input type="checkbox" onclick="check()" required>
+            <p>Мен өзімнің жеке ақпараттарымды өңдеуге рұқсат беремін</p></div>
+          <button class="btn" type="submit"><p>КУРСҚА ЖАЗЫЛУ</p></button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="FAQ">
+  <div class="container container-menos">
+    <div class="title">
+      Жиі қойылатын сұрақтар:
+    </div>
+
+    <div class="tabs">
+      <div class="tab">
+        <input id="tab-one" type="checkbox" name="tabs">
+        <label for="tab-one">Каспи Голд арқылы төлей аламын ба?</label>
+        <div class="tab-content">
+          <p>...</p>
+        </div>
+      </div>
+      <div class="tab">
+        <input id="tab-two" type="checkbox" name="tabs">
+        <label for="tab-two">Курсты қашан бастасам болады? </label>
+        <div class="tab-content">
+          <p>...</p>
+        </div>
+      </div>
+      <div class="tab">
+        <input id="tab-three" type="checkbox" name="tabs">
+        <label for="tab-three">Кураторлар әрдайым сұрақтарғажауап береді ма?</label>
+        <div class="tab-content">
+          <p>...</p>
+        </div>
+      </div>
+      <div class="tab">
+        <input id="tab-four" type="checkbox" name="tabs">
+        <label for="tab-four">Курстың өту мерзімі қандай?</label>
+        <div class="tab-content">
+          <p>...</p>
+        </div>
+      </div>
+      <div class="tab">
+        <input id="tab-five" type="checkbox" name="tabs">
+        <label for="tab-five">У меня получится если я никогда не занимался веб-дизайном?</label>
+        <div class="tab-content">
+          <p>...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

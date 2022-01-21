@@ -1,0 +1,68 @@
+{% extends "account/base.html" %}
+
+{% load i18n %}
+
+{% block title %}{% trans "Тіркелу" %}{% endblock %}
+
+{% block content %}
+<div class="container d-flex justify-content-center">
+  <div class="ks-form">
+    <br>
+    <div class="d-flex justify-content-center">
+      <h1 class="ks-help-text">{% trans "Оқуды қазір  бастаңыз" %}</h1>
+    </div>
+    <br>
+    {% if form.errors %}
+    {% for field in form %}
+    {% for error in field.errors %}
+    <div class="alert alert-danger">
+      <strong>{{ error|escape }}</strong>
+    </div>
+    {% endfor %}
+    {% endfor %}
+    {% for error in form.non_field_errors %}
+    <div class="alert alert-danger">
+      <strong>{{ error|escape }}</strong>
+    </div>
+    {% endfor %}
+    {% endif %}
+    <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+      {% csrf_token %}
+
+      <div class="form-group row d-flex justify-content-center">
+        <input class="form-control col-4" type="email" name="email" maxlength="50"
+               placeholder="E-mail" required id="id_email">
+      </div>
+
+      <div class="form-group row d-flex justify-content-center">
+        <input class="form-control col-4" type="text" name="username" maxlength="50"
+               placeholder="Логин" required id="id_username">
+      </div>
+
+      <div class="form-group row d-flex justify-content-center">
+        <input class="form-control col-4" type="password" name="password1" placeholder="{% trans 'Жаңа жасырын сөз' %}" required
+               id="id_password1">
+      </div>
+
+      <div class="form-group row d-flex justify-content-center">
+        <input class="form-control col-4" type="password" name="password2" placeholder="{% trans 'Жасырын сөзді растау' %}" required
+               id="id_password2">
+      </div>
+
+      {% if redirect_field_value %}
+      <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+      {% endif %}
+
+
+      <div class="form-group row d-flex justify-content-center">
+        <button class="ks-gradient-red btn" type="submit">
+          {% trans "Тіркелу" %} &raquo;
+        </button>
+      </div>
+      <div class="form-group row d-flex justify-content-center">
+        <p><a class="button secondaryAction" href="{% url 'account_login' %}">{% trans "Кіру" %}</a></p>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

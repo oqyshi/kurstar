@@ -1,0 +1,13 @@
+{% extends "account/base.html" %}
+
+{% load i18n %}
+
+{% block title %}{% trans "Сіздің E-mail-ды растаңыз" %}{% endblock %}
+
+{% block content %}
+<div class="container-menos">
+    <h1>{% trans "Сіздің E-mail-ды растаңыз" %}</h1>
+
+    <p>{% blocktrans %}Біз сізге растау үшін электрондық хат жібердік. Тіркеу процесін аяқтау үшін берілген сілтемеге өтіңіз. Егер сіз оны бірнеше минут ішінде алмасаңыз, бізге хабарласыңыз.{% endblocktrans %}</p>
+</div>
+{% endblock %}

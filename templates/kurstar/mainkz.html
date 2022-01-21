@@ -1,0 +1,318 @@
+{% extends "kurstar/base.html" %}
+{% load i18n %}
+{% load static i18n %}
+{% load static %}
+{% block title %}{% trans 'Басты' %}{% endblock %}
+{% block content %}
+
+<!-- SECTION - About -->
+
+<section id="about">
+  <div class="container">
+    <div class="about__photo">
+      <img src="{% static 'img/mainkz/offer.png' %}" alt="Основатели" title="Основатели">
+<!--      <div class="d-flex">-->
+<!--        <div class="col-6 d-flex justify-content-center align-items-center">-->
+<!--          <a href="https://www.instagram.com/bernarsaparali/" target="_blank"-->
+<!--             class="align-self-center instagram-start d-flex justify-content-center align-items-center"-->
+<!--             style="padding:5px;">-->
+<!--            <i class="fab fa-instagram" style="margin-right:2px;"></i>bernarsaparali-->
+<!--          </a>-->
+<!--        </div>-->
+
+<!--        <div class="col-6 d-flex">-->
+<!--          <a href="https://www.instagram.com/nurdias_aitbayev/" target="_blank"-->
+<!--             class="instagram-start d-flex justify-content-center align-items-center" style="min-width:150px;">-->
+<!--            <i class="fab fa-instagram" style="margin-right:2px;"></i>nurdias_aitbayev-->
+<!--          </a>-->
+<!--        </div>-->
+<!--      </div>-->
+    </div>
+    <div class="about__content d-flex flex-column justify-content-center">
+
+      <div class="about__title">
+        <h1>{% trans 'Сұранысқа ие <p>мамандықтардың №1</p> онлайн платформасы' %}</h1>
+      </div>
+
+      <div class="about__desription">
+        <p>{% trans 'Курсты сатып ал да алғашқы <br>табысыңды тап' %}</p>
+      </div>
+
+      <div class="buttons">
+        <button type="button" class="about__getCourse btn" onclick='modal("myModal")'>{% trans 'Курсты өту' %}</button>
+
+        <div id="myModal" class="popup-modal">
+          <div class="popup-modalContent">
+            <div class="popup-modalHeader">
+              <span class="popup-modalClose" data-close="true" title="Close">&times;</span>
+              {% trans 'Қазір өтініш қалдырыңыз және 20% жеңілдік алыңыз' %}
+            </div>
+            <div class="popup-modalBody d-flex justify-content-center">
+              <form class="login" method="POST" action="{% url 'kurstar:callme' %}">
+                {% csrf_token %}
+
+
+                <div class="form-group row d-flex justify-content-center">
+                  <input class="form-control" type="text" name="name" maxlength="50"
+                         placeholder="{% trans 'Аты-жөніңіз' %}"
+                         required>
+                </div>
+                <br>
+                <div class="form-group row d-flex justify-content-center">
+                  <input class="form-control" type="email" name="email" placeholder="E-mail" required>
+                </div>
+                <br>
+                <div class="form-group row d-flex justify-content-center">
+                  <input class="form-control" type="text" name="number" placeholder="Телефон" required>
+                </div>
+                <br>
+                <div class="form-group row d-flex justify-content-center">
+                  <input class="form-control" type="textarea" name="comment" placeholder="Курс\Комментарий">
+                </div>
+                <br>
+
+                <div class="form-group row d-flex justify-content-center">
+                  <button class="primaryAction ks-gradient-red btn" type="submit">
+                    {% trans 'Маған қоңырау шалыңыз!' %}
+                  </button>
+                </div>
+
+
+              </form>
+
+            </div>
+            <div class="popup-modalFooter">
+              {% trans 'Өтініш жібере отырып, мен жеке деректерді өңдеуге келісемін' %}
+              <div>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="about__ornament">
+          <a href="#video1">
+            <img src="{% static 'img/mainkz/button1.png' %}" alt="Орнамент" title="Орнамент">
+          </a>
+                  <p class="about__ornament__after"> {% trans 'Толығырақ 5 минуттық видеодан танысу' %}</p>
+          <div class="overlay" id="video1"></div>
+          <div class="modal">
+            <div class="video" id="youtube">
+              <iframe style="border: none;" width="100%" height="100%" id="player"
+                      src="https://www.youtube.com/embed/KKt7StfhMno?version=3&enablejsapi=1&color=red&showinfo=0&vq=highres&modestbranding=1&buffering=0&loop=0&rel=0&autoplay=0"
+                      allowfullscreen></iframe>
+            </div>
+            <div>
+              <a href="#close" id="stop" class="close"></a>
+            </div>
+            <script>
+        var player;
+        function onYouTubePlayerAPIReady() {
+        player = new YT.Player('player');
+        }
+
+        $('#stop').click(function(){
+        player.stopVideo()
+        })
+
+            </script>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION - Courses -->
+<section id="courses">
+  <div class="container-menos">
+
+    <h2 class="title">{% trans 'БІЗДІҢ КУРСТАР' %}</h2>
+
+    <div class="courses__group">
+      {% for course in courses %}
+      {% get_current_language as LANGUAGE_CODE %}
+      {% if course.visible and course.language == LANGUAGE_CODE %}
+      <a class='course' href="{% url 'kurstar:course_landing' course.id %}">
+        <img src="{{course.banner.url}}" alt="{{course.title}}" title="{{course.title}}" style="width:100%;height:100%;">
+      </a>
+      {% endif %}
+      {% endfor %}
+
+    </div>
+    <div class="courses__help">
+      <p class="consultation__text">{% trans 'Қай курсты таңдауды білмейсің бе? Тегін кеңес алуға жазыл!' %}</p>
+      <button class="consultation__btn btn" type="button" onclick='modal("myModal")'>{% trans 'ТЕГІН КЕҢЕСТІ АЛУ' %}
+      </button>
+    </div>
+  </div>
+</section>
+
+<section id="teachers">
+  <div class="container-menos">
+    <div class="teacher">
+      <div class="teacher__description">
+        <h3>АЙДАНА ЖУМАЛИЕВА</h3>
+        <h4>{% trans '21 жаста, Блоггер ' %}</h4>
+        <p>{% trans 'Мен әлеуметтік желіде танымал болғым келді, бірақ қалай екенін білмедім <span> “Instagram деген не?”</span> курсы арқылы өз нәтижеме жеттім.' %}</p>
+        <ul>
+          <li>{% trans '70.000 подписчик жинадым' %}</li>
+          <li>{% trans 'Өз инстаграмымды ашып, бизнесімді жүргізе бастадым' %}</li>
+          <li>{% trans 'Өз жеке брэндімді нөлден бастап қалыптастырдым' %}</li>
+        </ul>
+        <button class="teacher__more btn">{% trans '“INSTAGRAM ДЕГЕН НЕ?” туралы толығырақ' %}</button>
+      </div>
+      <div class="teachers__photo">
+        <img src="{% static 'img/mainkz/teacher1.png' %}" alt="Учитель 1">
+      </div>
+    </div>
+
+    <!-------------------------------------------->
+    <div class="teacher blue">
+      <div class="teachers__photo">
+        <img src="{% static 'img/mainkz/teacher2.png' %}" alt="Учитель 2">
+      </div>
+      <div class="teacher__description">
+        <h3>ДИМАШ БОЛАТ </h3>
+        <h4>{% trans '28 жаста, Жеке кәсіпкер' %}</h4>
+        <p>{% trans 'Kurstar маған ағылшын тілін барынша жоғары деңгейде үйренуге көмектесті және болашағыма жол ашты' %}</p>
+        <ul>
+          <li>{% trans 'Ақтау қаласынан Астанаға көштім' %}</li>
+          <li>{% trans 'IELTS-тан 7.0 алдым' %}</li>
+          <li>{% trans 'Халықаралық компанияға жұмысқа қабылдандым' %}</li>
+        </ul>
+        <form action="{% url 'kurstar:course_landing' 1 %}" class="inline">
+          <button class="teacher__more btn">{% trans '“IELTS“ курсы туралы толығырақ' %}</button>
+        </form>
+
+      </div>
+    </div>
+
+    <!-------------------------------------------->
+    <div class="teacher red">
+      <div class="teacher__description">
+        <h3>БАУЫРЖАН ТОЛЕБАЕВ </h3>
+        <h4>{% trans '35 жаста, Бизнесмен' %}</h4>
+        <p>{% trans 'Өмірімде жақсы өзгерістер бола бастады. Өз бизнесімнің алға дамуына жол аштым' %}</p>
+        <ul>
+          <li>{% trans 'Өз бизнесімді аштым' %}</li>
+          <li>{% trans 'Toyota Camry 70 автокөлігін сатып алдым' %}</li>
+          <li>{% trans 'Әке-шешемді Дубайға апардым' %}</li>
+        </ul>
+        <button class="teacher__more btn">{% trans '“БИЗНЕС” курсы туралы толығырақ' %}</button>
+      </div>
+      <div class="teachers__photo">
+        <img src="{% static 'img/mainkz/teacher3.png' %}" alt="Учитель 3">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="motivation">
+  <div class="container-menos">
+    <h2 class="title">{% trans 'Сіз неге бізді таңдауыңыз керек?' %}</h2>
+    <div class="advantages">
+      <div class="advantage first">
+        <div class="advantage__image">
+          <img src="{% static 'img/mainkz/Group 41.svg' %}" alt="Преимущество 1">
+        </div>
+        <div class="advantage__text">
+          <h3 class="advantage__title">{% trans 'Курстар онлайн өтеді' %}</h3>
+          <div class="advantage__description">
+            <ul>
+              <li>{% trans 'Курсты <b>кез-келген уақытта</b> оқы' %}</li>
+              <li>{% trans 'Саған тек <b>телефон немесе ноутбук</b> керек' %}</li>
+              <li>{% trans 'Оқып, мамандык алып, <b>бүгіннен бастап</b> табысты тап' %}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="advantage two blue second">
+        <div class="advantage__text">
+          <h3 class="advantage__title">{% trans 'Кураторлар әрқашан көмек көрсететін болады' %}</h3>
+          <div class="advantage__description">
+            {% trans 'Әр курстың өз кураторы бар. Сұрақ қойып, тапсырмаларды <b>WhatsApp, Telegram</b> арқылы жібер, кері байланыс ал.' %}
+          </div>
+        </div>
+        <div class="advantage__image phones">
+          <img src="{% static 'img/mainkz/phones.svg' %}" alt="Преимущество 2">
+        </div>
+      </div>
+      <div class="advantage green third">
+        <div class="advantage__image">
+          <img src="{% static 'img/mainkz/Сертификат 1.svg' %}" alt="Преимущество 3">
+        </div>
+        <div class="advantage__text">
+          <h3 class="advantage__title">{% trans 'Курсты аяқтағаннан кейін сіз аласыз' %}</h3>
+          <div class="advantage__description">
+            <ul>
+              <li>{% trans 'Курсты өту бойынша <b>сертификат</b>' %}</li>
+              <li>{% trans 'Мықты әрі білімді <b>орта</b>' %}</li>
+              <li>{% trans '<b>Кепілдендірілген</b> нәтиже' %}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="advantage two">
+        <div class="advantage__text">
+          <h3 class="advantage__title">{% trans 'Қазақ тіліндегі алғашқы онлайн платформа' %}</h3>
+          <div class="advantage__description">
+            {% trans 'Платформадағы барлық курстар <b>таңдалған тілінде</b> жүргізіледі.' %}
+          </div>
+        </div>
+        <div class="advantage__image">
+          <img src="{% static 'img/mainkz/Rectangle 31.svg' %}" alt="Преимущество 4">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="FAQ">
+  <div class="container-faq">
+    <h2 class="title">{% trans 'Жиі қойылатын сұрақтарға жауаптар' %}</h2>
+
+    <div class="tabs">
+      <div class="tab">
+        <input id="tab-one" type="checkbox" name="tabs">
+        <label for="tab-one">{% trans 'Kaspi Gold арқылы төлем жасай аламын ба?' %}</label>
+        <div class="tab-content">
+          <p>...</p>
+        </div>
+      </div>
+      <div class="tab">
+        <input id="tab-two" type="checkbox" name="tabs">
+        <label for="tab-two">{% trans 'Курсты қалай сатып аламын?' %}</label>
+        <div class="tab-content">
+          <p>...</p>
+        </div>
+      </div>
+      <div class="tab">
+        <input id="tab-three" type="checkbox" name="tabs">
+        <label for="tab-three">{% trans 'Барлық курстарда кураторлар бола ма?' %}</label>
+        <div class="tab-content">
+          <p>...</p>
+        </div>
+      </div>
+      <div class="tab">
+        <input id="tab-four" type="checkbox" name="tabs">
+        <label for="tab-four">...</label>
+        <div class="tab-content">
+          <p>...</p>
+        </div>
+      </div>
+      <div class="tab">
+        <input id="tab-five" type="checkbox" name="tabs">
+        <label for="tab-five">...</label>
+        <div class="tab-content">
+          <p>...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+{% endblock %}
