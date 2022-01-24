@@ -2,17 +2,17 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-SECRET_KEY = 'MPETs2E7r9xox6ivgo4WlTwY7gAjAeQa9GVVwXL2HOVX98t4QngXZXvDhjm67yZG'
+SECRET_KEY = 'your_secret_key'
 
 DEBUG = False
-ALLOWED_HOSTS = ['89.108.65.97', '2a00:f940:2:4:2::16d4', '89-108-65-97.cloudvps.regruhosting.ru', 'kurstar.kz']
+ALLOWED_HOSTS = ['kurstar.kz']
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'django_project_db',
         'USER': 'django',
-        'PASSWORD': 'Aivae7ahRaro',
+        'PASSWORD': 'your_password',
         'HOST': 'localhost',
         'PORT': '',
     }
@@ -20,8 +20,8 @@ DATABASES = {
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-# EMAIL_HOST_USER = 'kurstar.help@gmail.com'
+# EMAIL_HOST_USER = 'yourmail@gmail.com'
 # EMAIL_HOST = 'smtp.gmail.com'
 # EMAIL_PORT = 587
 # EMAIL_USE_TLS = True
-# EMAIL_HOST_PASSWORD = 'Qqwerty1!'
+# EMAIL_HOST_PASSWORD = 'your_password'
